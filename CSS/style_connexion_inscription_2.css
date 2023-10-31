@@ -1,0 +1,74 @@
+body {
+    background-color: #e3e9f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+main {
+    background: #e3e9f7;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    max-width: 80%; /* Largeur maximale du formulaire en pourcentage */
+    width: 300px; /* Largeur minimale du formulaire */
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.4); /* Augmentation du flou et de la distance horizontale et verticale */
+}
+
+form {
+    text-align: left;
+}
+
+label, input {
+    display: block;
+    padding: 10px 12px;
+}
+
+input[type="text"], input[type="password"]{
+    width: 93%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+
+input[type="submit"], input[type="button"]{
+    width: 100%;
+    background: #262626;
+    color: #e3e9f7;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,input[type="button"]:hover  {
+    background: #383737;
+    transform: scale(1.01); /* Agrandit la carte de 5% lorsqu'elle est survolée */
+}
+
+@media (max-width: 768px) {
+    /* Styles spécifiques pour les résolutions plus petites, par exemple, les appareils mobiles */
+    main {
+        max-width: 90%; /* Ajustez la largeur pour les résolutions plus petites */
+    }
+}
+
+/* Styles spécifiques pour les boutons */
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#valider, #annuler {
+    flex: 1;
+    margin: 0 5px; /* Marge entre les boutons */
+}
+
+.valider{
+    margin-right: 10px;
+}

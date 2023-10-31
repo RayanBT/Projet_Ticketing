@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #e3e9f7;
+}
+.page{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+/* Styles pour les écrans de largeur normale (par exemple, les ordinateurs de bureau) */
+nav ul {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 16%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom,#29648A,#2E9CCA);
+    display: flex;
+    flex-direction: column; /* Réorganise les éléments en colonne */
+    box-shadow: 0 5px 15px #307191;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #fff;
+    position: relative;
+    padding: 25px 0 25px 38px;
+}
+
+nav ul li a:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 0%;
+    height: 100%;
+    background: #e3e9f7;
+    border-radius: 40px 0px 0px 40px;
+    z-index: -1;
+    transition: all 300ms ease-in-out;
+}
+
+nav ul li:hover a {
+    color: #2b2626;
+}
+
+nav ul li:hover a:before {
+    width: 95%;
+}
+
+nav ul li:last-child {
+    margin-top: auto;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 25px auto;
+}
+.logo img {
+    width: 100%;
+}
+
+.corps{
+    width: 74%;
+    margin-left: 25%;
+    margin-right: 10%;
+    padding-top: 5vh;
+}
+
+.corps p{
+    text-align:justify;
+}
+
+main > iframe {
+    margin: 0 auto;
+    display: block;
+}
+
+table{
+    margin: 0 auto;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+footer{
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 0 auto;
+}
+
+.card {
+    width: 30%;
+    background-color: #e3e9f7;
+    border-radius: 10px;
+    box-sizing: border-box;
+    min-width: 100px;
+    margin: 2% 1% 2% 0;
+    flex-grow: 1;
+    padding: 7px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
