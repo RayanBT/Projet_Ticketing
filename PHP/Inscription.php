@@ -36,8 +36,19 @@ if (isset($_POST["inscription"])) {
         mysqli_stmt_execute($stmt);
         mysqli_stmt_store_result($stmt);
 
-        if (mysqli_stmt_num_rows($stmt) > 0) {
+        // Requête préparée pour vérifier si le login existe déjà
+        $query2 = "SELECT * FROM $tab WHERE Login = ?";
+        $stmt2 = mysqli_prepare($connection, $query2);
+        mysqli_stmt_bind_param($stmt2, 's', $login);
+        mysqli_stmt_execute($stmt2);
+        mysqli_stmt_store_result($stmt2);
+
+        if (mysqli_stmt_num_rows($stmt) > 0 and mysqli_stmt_num_rows($stmt2) > 0) {
+            echo "L'adresse e-mail et le login existent déjà. Veuillez utiliser une autre adresse e-mail et login.<br>";
+        } elseif (mysqli_stmt_num_rows($stmt) > 0){
             echo "L'adresse e-mail existe déjà. Veuillez utiliser une autre adresse e-mail.<br>";
+        } elseif(mysqli_stmt_num_rows($stmt2) > 0){
+            echo "Le login existe déjà. Veuillez utiliser un autre login<br>";
         } else {
             // Requête SQL correcte avec des marqueurs de paramètres
             $requete = "INSERT INTO `User` (`id_User`,`Nom`, `Login`, `Email`, `Mdp`) VALUES (NULL,?, ?, ?, MD5(?))";
