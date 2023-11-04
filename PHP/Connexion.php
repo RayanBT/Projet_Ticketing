@@ -1,4 +1,8 @@
 <?php
+
+// Inclure le fichier de configuration des logs
+require_once('config.php');
+
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 // Vérifie si le formulaire a été soumis
@@ -31,11 +35,14 @@ if (isset($_POST["connexion"])){
 
             // Vérifiez le mot de passe (en MD5)
             if (md5($mot_de_passe) === $hashed_password) {
+                logMessage("Connexion réussie pour l'utilisateur avec l'adresse e-mail : $email");
                 echo "Connexion réussie. Vous êtes maintenant connecté.";
             } else {
+                logMessage("Tentative de connexion échouée pour l'utilisateur avec l'adresse e-mail : $email", 'error');
                 echo "Mot de passe incorrect. Veuillez réessayer.";
             }
         } else {
+            logMessage("L'adresse e-mail n'existe pas dans la base de données. Veuillez vous inscrire.", 'error');
             echo "L'adresse e-mail n'existe pas dans la base de données. Veuillez vous inscrire.";
         }
 
@@ -43,6 +50,4 @@ if (isset($_POST["connexion"])){
         mysqli_close($connection);
     }
 }
-
-
 ?>
