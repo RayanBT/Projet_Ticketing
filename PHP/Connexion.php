@@ -10,9 +10,9 @@ if (isset($_POST["connexion"])){
     $host = "localhost";
     $user = "root";
     $password = "";
-    if (!empty(!empty($_POST['email']) and !empty($_POST['mot_de_passe']))) {
+    if (!empty($_POST['login_connexion']) and !empty($_POST['mot_de_passe'])) {
         // Récupérez l'e-mail et le mot de passe saisis dans le formulaire de connexion
-        $email = $_POST["email"];
+        $login = $_POST["login_connexion"];
         $mot_de_passe = $_POST["mot_de_passe"];
 
 // Connexion à la base de données
@@ -21,28 +21,28 @@ if (isset($_POST["connexion"])){
         $db = mysqli_select_db($connection, $namedb) or die("Erreur de sélection de la base de données");
         $tab = "User";
 
-// Requête SQL pour vérifier si l'e-mail existe dans la table User
-        $query = "SELECT Mdp FROM $tab WHERE Email = ?";
+// Requête SQL pour vérifier si le login existe dans la table User
+        $query = "SELECT Mdp FROM $tab WHERE Login = ?";
         $stmt = mysqli_prepare($connection, $query);
-        mysqli_stmt_bind_param($stmt, 's', $email);
+        mysqli_stmt_bind_param($stmt, 's', $login);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_store_result($stmt);
 
         if (mysqli_stmt_num_rows($stmt) > 0) {
-            // L'e-mail existe, maintenant vérifiez le mot de passe
+            // Le login existe, maintenant vérifiez le mot de passe
             mysqli_stmt_bind_result($stmt, $hashed_password);
             mysqli_stmt_fetch($stmt);
 
             // Vérifiez le mot de passe (en MD5)
             if (md5($mot_de_passe) === $hashed_password) {
-                logMessage("Connexion réussie pour l'utilisateur avec l'adresse e-mail : $email");
+                logMessage("Connexion réussie pour l'utilisateur avec le login : $login");
                 echo "Connexion réussie. Vous êtes maintenant connecté.";
             } else {
-                logMessage("Tentative de connexion échouée pour l'utilisateur avec l'adresse e-mail : $email", 'error');
+                logMessage("Tentative de connexion échouée pour l'utilisateur avec le login : $login", 'error');
                 echo "Mot de passe incorrect. Veuillez réessayer.";
             }
         } else {
-            logMessage("L'adresse e-mail n'existe pas dans la base de données. Veuillez vous inscrire.", 'error');
+            logMessage("Le login n'existe pas dans la base de données. Veuillez vous inscrire.", 'error');
             echo "L'adresse e-mail n'existe pas dans la base de données. Veuillez vous inscrire.";
         }
 
