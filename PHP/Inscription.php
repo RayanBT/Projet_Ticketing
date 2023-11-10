@@ -1,5 +1,7 @@
 <?php
-
+session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 // Inclure le fichier de configuration des logs
 require_once('config.php');
 
@@ -44,11 +46,18 @@ if (isset($_POST["inscription"])) {
         mysqli_stmt_store_result($stmt2);
 
         if (mysqli_stmt_num_rows($stmt) > 0 and mysqli_stmt_num_rows($stmt2) > 0) {
-            echo "L'adresse e-mail et le login existent déjà. Veuillez utiliser une autre adresse e-mail et login.<br>";
+            $_SESSION['inscription_message'] = 'Échec inscription. Adresse e-mail et le login existent déjà.';
+            $_SESSION['inscription_reussie'] = false;
+            header('Location: ../HTML/Connexion_Inscription.php');
+            exit();
         } elseif (mysqli_stmt_num_rows($stmt) > 0){
-            echo "L'adresse e-mail existe déjà. Veuillez utiliser une autre adresse e-mail.<br>";
+            $_SESSION['inscription_message'] = 'Échec inscription. Adresse e-mail existent déjà.';
+            $_SESSION['inscription_reussie'] = false;
+            header('Location: ../HTML/Connexion_Inscription.php');
         } elseif(mysqli_stmt_num_rows($stmt2) > 0){
-            echo "Le login existe déjà. Veuillez utiliser un autre login<br>";
+            $_SESSION['inscription_message'] = 'Échec de inscription. Le login existent déjà.';
+            $_SESSION['inscription_reussie'] = false;
+            header('Location: ../HTML/Connexion_Inscription.php');
         } else {
             // Requête SQL correcte avec des marqueurs de paramètres
             $requete = "INSERT INTO `User` (`id_User`,`Nom`, `Login`, `Email`, `Mdp`) VALUES (NULL,?, ?, ?, MD5(?))";
@@ -66,10 +75,16 @@ if (isset($_POST["inscription"])) {
 
                 if ($result) {
                     logMessage("Inscription réussie pour l'utilisateur avec l'adresse e-mail : $email");
-                    echo "Inscription réussie.";
+                    $_SESSION['inscription_message'] = "Inscription réussie";
+                    $_SESSION['inscription_reussie'] = true;
+                    header('Location: ../HTML/Connexion_Inscription.php');
+                    exit();
                 } else {
                     logMessage("Echec de l'inscription pour l'utilisateur avec l'adresse e-mail : $email", 'error');
-                    echo "Erreur d'inscription : " . mysqli_error($connection);
+                    $_SESSION['inscription_message'] = "Échec inscription";
+                    $_SESSION['inscription_reussie'] = false;
+                    header('Location: ../HTML/Connexion_Inscription.php');
+                    exit();
                 }
 
                 // Fermeture de la requête préparée
