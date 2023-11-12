@@ -2,7 +2,7 @@
 
 // Config.php
 $logConfig = [
-    'logFile' => '/Users/rayan/Universite/Projets/Projet_Ticketing/PHP/app.log',
+    'logFile' => 'app.log',
     'logLevel' => 'info',
 ];
 
