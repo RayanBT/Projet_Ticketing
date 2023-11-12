@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 session_start();
 ?>
 <!DOCTYPE html>
@@ -55,17 +53,16 @@ session_start();
                 </div>
             </div>
         </div>
-        <script src="../JS/script.js"></script>
-        <script src="../JS/volet.js"></script>
+        <script src="../JS/Script.js"></script>
 
         <?php
-        if (isset($_SESSION['inscription_reussie'])) {
-            $message = ($_SESSION['inscription_message']);
-            $couleur = ($_SESSION['inscription_reussie']) ? "green" : "red";
+        if (isset($_SESSION['couleur'])) {
+            $message = ($_SESSION['message']);
+            $couleur = ($_SESSION['couleur']) ? "green" : "red";
             // Appel de la fonction sans inclure à nouveau le script
             echo "<script>afficherVolet('$message', '$couleur');</script>";
             // Vider la session après utilisation
-            unset($_SESSION['inscription_reussie']);
+            unset($_SESSION['couleur']);
         } else {
             echo "<script>console.log('KO');</script>";
         }

@@ -24,6 +24,6 @@ Pour ce premier livrable, le répertoire "src" contient plusieurs sous-dossiers 
 
 4. **JS** : Il y aura le fichier JavaScript dans ce dossier :
 
-   - [script.js](../Src/JS/script.js)
+   - [Script.js](../Src/JS/script.js)
 
 Chaque sous-dossier a un rôle spécifique dans le développement de notre solution de site de ticketing, et vous pouvez naviguer dans ces dossiers pour accéder aux fichiers pertinents pour le développement.

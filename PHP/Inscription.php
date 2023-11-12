@@ -1,12 +1,7 @@
 <?php
 session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 // Inclure le fichier de configuration des logs
-require_once('config.php');
-
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+require_once('Config.php');
 // Vérifie si le formulaire a été soumis
 if (isset($_POST["inscription"])) {
     $host = "localhost";
@@ -46,18 +41,18 @@ if (isset($_POST["inscription"])) {
         mysqli_stmt_store_result($stmt2);
 
         if (mysqli_stmt_num_rows($stmt) > 0 and mysqli_stmt_num_rows($stmt2) > 0) {
-            $_SESSION['inscription_message'] = 'Échec inscription. Adresse e-mail et le login existent déjà.';
-            $_SESSION['inscription_reussie'] = false;
-            header('Location: ../HTML/Connexion_Inscription.php');
+            $_SESSION['message'] = 'Échec inscription. Adresse e-mail et le login existent déjà.';
+            $_SESSION['couleur'] = false;
+            header('Location: ../HTML/form_connexion_inscription.php');
             exit();
         } elseif (mysqli_stmt_num_rows($stmt) > 0){
-            $_SESSION['inscription_message'] = 'Échec inscription. Adresse e-mail existent déjà.';
-            $_SESSION['inscription_reussie'] = false;
-            header('Location: ../HTML/Connexion_Inscription.php');
+            $_SESSION['message'] = 'Échec inscription. Adresse e-mail existent déjà.';
+            $_SESSION['couleur'] = false;
+            header('Location: ../HTML/form_connexion_inscription.php');
         } elseif(mysqli_stmt_num_rows($stmt2) > 0){
-            $_SESSION['inscription_message'] = 'Échec de inscription. Le login existent déjà.';
-            $_SESSION['inscription_reussie'] = false;
-            header('Location: ../HTML/Connexion_Inscription.php');
+            $_SESSION['message'] = 'Échec de inscription. Le login existent déjà.';
+            $_SESSION['couleur'] = false;
+            header('Location: ../HTML/form_connexion_inscription.php');
         } else {
             // Requête SQL correcte avec des marqueurs de paramètres
             $requete = "INSERT INTO `User` (`id_User`,`Nom`, `Login`, `Email`, `Mdp`) VALUES (NULL,?, ?, ?, MD5(?))";
@@ -75,15 +70,15 @@ if (isset($_POST["inscription"])) {
 
                 if ($result) {
                     logMessage("Inscription réussie pour l'utilisateur avec l'adresse e-mail : $email");
-                    $_SESSION['inscription_message'] = "Inscription réussie";
-                    $_SESSION['inscription_reussie'] = true;
-                    header('Location: ../HTML/Connexion_Inscription.php');
+                    $_SESSION['message'] = "Inscription réussie";
+                    $_SESSION['couleur'] = true;
+                    header('Location: ../HTML/form_connexion_inscription.php');
                     exit();
                 } else {
                     logMessage("Echec de l'inscription pour l'utilisateur avec l'adresse e-mail : $email", 'error');
-                    $_SESSION['inscription_message'] = "Échec inscription";
-                    $_SESSION['inscription_reussie'] = false;
-                    header('Location: ../HTML/Connexion_Inscription.php');
+                    $_SESSION['message'] = "Échec inscription";
+                    $_SESSION['couleur'] = false;
+                    header('Location: ../HTML/form_connexion_inscription.php');
                     exit();
                 }
 

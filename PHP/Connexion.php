@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 // Inclure le fichier de configuration des logs
-require_once('config.php');
+require_once('Config.php');
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -36,18 +36,30 @@ if (isset($_POST["connexion"])){
             // Vérifiez le mot de passe (en MD5)
             if (md5($mot_de_passe) === $hashed_password) {
                 logMessage("Connexion réussie pour l'utilisateur avec le login : $login");
-                echo "Connexion réussie. Vous êtes maintenant connecté.";
+                header("Location: ../HTML/utilisateur.html");
             } else {
                 logMessage("Tentative de connexion échouée pour l'utilisateur avec le login : $login", 'error');
-                echo "Mot de passe incorrect. Veuillez réessayer.";
+                $_SESSION['message'] = "Échec de connexion. Le mot de passe est incorrect.";
+                $_SESSION['couleur'] = false;
+                header('Location: ../HTML/form_connexion_inscription.php');
+                exit();
             }
         } else {
-            logMessage("Le login n'existe pas dans la base de données. Veuillez vous inscrire.", 'error');
-            echo "L'adresse e-mail n'existe pas dans la base de données. Veuillez vous inscrire.";
+            logMessage("Le login n'existe pas dans la base de données.", 'error');
+            echo "Le login n'existe pas dans la base de données. Veuillez vous inscrire.";
+            $_SESSION['message'] = "Échec de connexion. Login incorrect.";
+            $_SESSION['couleur'] = false;
+            header('Location: ../HTML/form_connexion_inscription.php');
+            exit();
         }
 
         // Fermeture de la connexion à la base de données
         mysqli_close($connection);
+    }else {
+        $_SESSION['message'] = "Échec de connexion. Veuillez remplir tous les champs.";
+        $_SESSION['couleur'] = false;
+        header('Location: ../HTML/form_connexion_inscription.php');
+        exit();
     }
 }
 ?>
