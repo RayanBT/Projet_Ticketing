@@ -14,7 +14,7 @@ session_start();
     <main>
         <div class = "container" id="container">
             <div class="form-container sign-up">
-                <form action="../PHP/Inscription.php" method="post">    <!--changer l'action vers le formulaire action.php-->
+                <form action="Inscription.php" method="post">    <!--changer l'action vers le formulaire action.php-->
                     <h1>Créer un compte</h1>
                     <label for="name">Nom :</label>
                     <input type="text" id="name" placeholder="Nom" name="nom">
@@ -28,7 +28,7 @@ session_start();
                 </form>
             </div>
             <div class="form-container sign-in">
-                <form action="../PHP/Connexion.php" method="post">    <!--changer l'action vers le formulaire action.php-->
+                <form action="Connexion.php" method="post">    <!--changer l'action vers le formulaire action.php-->
                     <h1>Connectez-vous</h1>
                     <label for="login">Login :</label>
                     <input type="text" id="login_connexion" placeholder="Login" name="login_connexion">

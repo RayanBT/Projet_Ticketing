@@ -43,16 +43,16 @@ if (isset($_POST["inscription"])) {
         if (mysqli_stmt_num_rows($stmt) > 0 and mysqli_stmt_num_rows($stmt2) > 0) {
             $_SESSION['message'] = 'Échec inscription. Adresse e-mail et le login existent déjà.';
             $_SESSION['couleur'] = false;
-            header('Location: ../HTML/form_connexion_inscription.php');
+            header('Location: ../PHP/form_connexion_inscription.php');
             exit();
         } elseif (mysqli_stmt_num_rows($stmt) > 0){
             $_SESSION['message'] = 'Échec inscription. Adresse e-mail existent déjà.';
             $_SESSION['couleur'] = false;
-            header('Location: ../HTML/form_connexion_inscription.php');
+            header('Location: ../PHP/form_connexion_inscription.php');
         } elseif(mysqli_stmt_num_rows($stmt2) > 0){
             $_SESSION['message'] = 'Échec de inscription. Le login existent déjà.';
             $_SESSION['couleur'] = false;
-            header('Location: ../HTML/form_connexion_inscription.php');
+            header('Location: ../PHP/form_connexion_inscription.php');
         } else {
             // Requête SQL correcte avec des marqueurs de paramètres
             $requete = "INSERT INTO `User` (`id_User`,`Nom`, `Login`, `Email`, `Mdp`) VALUES (NULL,?, ?, ?, MD5(?))";
@@ -72,13 +72,13 @@ if (isset($_POST["inscription"])) {
                     logMessage("Inscription réussie pour l'utilisateur avec l'adresse e-mail : $email");
                     $_SESSION['message'] = "Inscription réussie";
                     $_SESSION['couleur'] = true;
-                    header('Location: ../HTML/form_connexion_inscription.php');
+                    header('Location: ../PHP/form_connexion_inscription.php');
                     exit();
                 } else {
                     logMessage("Echec de l'inscription pour l'utilisateur avec l'adresse e-mail : $email", 'error');
                     $_SESSION['message'] = "Échec inscription";
                     $_SESSION['couleur'] = false;
-                    header('Location: ../HTML/form_connexion_inscription.php');
+                    header('Location: ../PHP/form_connexion_inscription.php');
                     exit();
                 }
 

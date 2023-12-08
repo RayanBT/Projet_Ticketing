@@ -36,12 +36,12 @@ if (isset($_POST["connexion"])){
             // Vérifiez le mot de passe (en MD5)
             if (md5($mot_de_passe) === $hashed_password) {
                 logMessage("Connexion réussie pour l'utilisateur avec le login : $login");
-                header("Location: ../HTML/utilisateur.html");
+                header("Location: ../PHP/utilisateur.php");
             } else {
                 logMessage("Tentative de connexion échouée pour l'utilisateur avec le login : $login", 'error');
                 $_SESSION['message'] = "Échec de connexion. Le mot de passe est incorrect.";
                 $_SESSION['couleur'] = false;
-                header('Location: ../HTML/form_connexion_inscription.php');
+                header('Location: ../PHP/form_connexion_inscription.php');
                 exit();
             }
         } else {
@@ -49,7 +49,7 @@ if (isset($_POST["connexion"])){
             echo "Le login n'existe pas dans la base de données. Veuillez vous inscrire.";
             $_SESSION['message'] = "Échec de connexion. Login incorrect.";
             $_SESSION['couleur'] = false;
-            header('Location: ../HTML/form_connexion_inscription.php');
+            header('Location: ../PHP/form_connexion_inscription.php');
             exit();
         }
 
@@ -58,8 +58,9 @@ if (isset($_POST["connexion"])){
     }else {
         $_SESSION['message'] = "Échec de connexion. Veuillez remplir tous les champs.";
         $_SESSION['couleur'] = false;
-        header('Location: ../HTML/form_connexion_inscription.php');
+        header('Location: ../PHP/form_connexion_inscription.php');
         exit();
     }
+    $_SESSION['login'] = $login; // pour afficher le login sur la page user
 }
 ?>

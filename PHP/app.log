@@ -67,3 +67,19 @@
 [12-11-2023 19:48:51] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : toutou
 [12-11-2023 19:49:58] [info] [IP: ::1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : jvnjvi@gmail.com
 [12-11-2023 20:01:05] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : toutou
+[01-12-2023 19:07:27] [info] [IP: 127.0.0.1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : armand.clouzeau@gmail.com
+[01-12-2023 19:08:34] [info] [IP: 127.0.0.1]: Connexion réussie pour l'utilisateur avec le login : armand
+[01-12-2023 19:12:29] [info] [IP: 127.0.0.1]: Connexion réussie pour l'utilisateur avec le login : armand
+[01-12-2023 19:13:12] [info] [IP: 127.0.0.1]: Connexion réussie pour l'utilisateur avec le login : armand
+[01-12-2023 19:19:01] [info] [IP: 127.0.0.1]: Connexion réussie pour l'utilisateur avec le login : armand
+[03-12-2023 12:56:21] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : armand
+[03-12-2023 17:12:34] [info] [IP: ::1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : mathilde_la_bg@gmail.com
+[03-12-2023 17:12:52] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : mathilde_la_bg
+[03-12-2023 17:13:16] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : armand
+[03-12-2023 17:19:00] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : mathilde_la_bg
+[03-12-2023 17:25:57] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : armand
+[04-12-2023 23:08:35] [info] [IP: 127.0.0.1]: Connexion réussie pour l'utilisateur avec le login : armand
+[05-12-2023 12:07:35] [error] [IP: ::1]: Le login n'existe pas dans la base de données.
+[05-12-2023 12:07:53] [info] [IP: ::1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : rayan@gmail.com
+[05-12-2023 12:08:03] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : rayan
+[05-12-2023 12:11:24] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : armand
