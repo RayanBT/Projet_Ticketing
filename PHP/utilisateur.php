@@ -26,7 +26,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
         <ul>
             <li class="logo"><img alt="logo de Rayan Ticket" src="../IMG/Proposition_logo_1.png"></li>
             <li>
-                <a href="accueil.html"><i class="fa fa-home"></i> &nbsp; Accueil</a>
+                <a href="accueil.php"><i class="fa fa-home"></i> &nbsp; Accueil</a>
             </li>
             <li>
                 <a href="form_creation_ticket.php"><i class="fa fa-plus-circle"></i> &nbsp; Créer un ticket</a>
