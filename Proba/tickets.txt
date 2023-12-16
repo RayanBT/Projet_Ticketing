@@ -1,0 +1,179 @@
+id_ticket,login,sujet,description,priorité,date,heure,status
+1,user123,Demande d'assistance,Problème avec l'imprimante,haute,2023-12-15,09:30,en cours de traitement
+2,user456,Problème de connexion,Impossible de se connecter au réseau,moyenne,2023-12-14,11:45,fermé
+3,user789,Besoin d'aide pour un logiciel,Erreur inconnue lors de l'utilisation,haute,2023-12-13,14:20,en cours de traitement
+4,user789,Demande de formation,Formation sur le nouveau logiciel requis,faible,2023-12-12,10:00,en cours de traitement
+5,user456,Problème de messagerie,Emails non reçus dans la boîte de réception,moyenne,2023-12-11,16:55,fermé
+6,user123,Demande de matériel,Nouveau bureau requis pour le département,haute,2023-12-10,13:10,en cours de traitement
+7,user789,Problème avec le système,Écrans figés après la mise à jour,haute,2023-12-09,08:45,en cours de traitement
+8,user456,Besoin d'assistance téléphonique,Configuration du téléphone professionnel,faible,2023-12-08,09:20,en cours de traitement
+9,user123,Problème d'accès aux fichiers,Impossible d'ouvrir certains documents,haute,2023-12-07,14:35,en cours de traitement
+10,user789,Demande de dépannage,Dysfonctionnement du système de ventilation,haute,2023-12-06,12:00,fermé
+11,user123,Demande de modification de compte,Changement de droits d'accès requis,faible,2023-12-05,10:25,en cours de traitement
+12,user456,Besoin d'aide pour un logiciel,Interface peu intuitive,faible,2023-12-04,16:10,en cours de traitement
+13,user789,Demande de réinitialisation du mot de passe,Mot de passe oublié,faible,2023-12-03,11:55,fermé
+14,user123,Problème de connexion à distance,Accès au réseau depuis l'extérieur impossible,moyenne,2023-12-02,08:30,en cours de traitement
+15,user456,Demande de matériel informatique,Ordinateur portable requis,haute,2023-12-01,15:15,en cours de traitement
+16,user789,Problème d'impression,Impression de documents trop lente,moyenne,2023-11-30,13:40,fermé
+17,user123,Besoin d'assistance pour un projet,Support pour logiciel de gestion de projet,haute,2023-11-29,09:05,en cours de traitement
+18,user456,Demande d'information sur un logiciel spécifique,Renseignements sur la dernière version du logiciel,moyenne,2023-11-28,11:50,en cours de traitement
+19,user789,Problème avec l'application mobile,L'application se ferme inopinément,moyenne,2023-11-27,14:25,fermé
+20,user123,Demande de sauvegarde des données,Sauvegarde régulière des fichiers requis,faible,2023-11-26,10:00,en cours de traitement
+21,user456,Problème de réseau wifi,Lenteur de la connexion wifi,haute,2023-11-25,16:45,fermé
+22,user789,Demande d'installation de logiciel,Installation d'un logiciel spécifique sur les postes,faible,2023-11-24,13:20,en cours de traitement
+23,user123,Besoin de matériel de bureau,Commande de fournitures de bureau,faible,2023-11-23,08:55,en cours de traitement
+24,user456,Demande d'assistance pour une présentation,Support pour logiciel de présentation,haute,2023-11-22,11:30,fermé
+25,user789,Problème d'utilisation du logiciel comptable,Erreurs dans les calculs du logiciel,moyenne,2023-11-21,14:05,en cours de traitement
+26,user123,Demande de réparation d'équipement,Machine à café hors service,faible,2023-11-20,09:40,en cours de traitement
+27,user456,Problème avec le système téléphonique,Perturbations dans les appels sortants,haute,2023-11-19,16:15,fermé
+28,user789,Demande d'assistance pour un événement,Support technique pour conférence à venir,haute,2023-11-18,12:50,en cours de traitement
+29,user123,Besoin de formation sur un logiciel spécifique,Formation sur logiciel de gestion de stock,faible,2023-11-17,08:25,en cours de traitement
+30,user456,Demande de déblocage de compte,Compte utilisateur verrouillé,haute,2023-11-16,11:00,fermé
+31,user789,Problème d'accès aux serveurs,Inaccessibilité aux serveurs de données,moyenne,2023-11-15,14:35,en cours de traitement
+32,user123,Demande de configuration d'emails professionnels,Configuration de boîtes mails supplémentaires,faible,2023-11-14,09:10,en cours de traitement
+33,user456,Problème avec le logiciel de comptabilité,Erreur dans les soldes,haute,2023-11-13,16:45,fermé
+34,user789,Besoin d'aide pour un logiciel de design,Support pour logiciel de retouche photo,moyenne,2023-11-12,12:20,en cours de traitement
+35,user123,Demande de matériel pour télétravail,Équipement nécessaire pour le télétravail,faible,2023-11-11,08:55,en cours de traitement
+36,user456,Problème avec le VPN,Connexion au réseau d'entreprise impossible,haute,2023-11-10,11:30,fermé
+37,user789,Demande de mise à jour logicielle,Mise à jour des logiciels de sécurité requis,haute,2023-11-09,15:05,en cours de traitement
+38,user123,Besoin d'assistance pour un projet urgent,Support pour logiciel de modélisation,faible,2023-11-08,09:40,en cours de traitement
+39,user456,Demande de réparation de matériel informatique,Ordinateur de bureau en panne,haute,2023-11-07,12:15,fermé
+40,user789,Problème avec l'application de gestion des tâches,Bugs dans l'affichage des tâches,moyenne,2023-11-06,14:50,en cours de traitement
+41,user123,Demande de réinitialisation de serveur,Serveur instable,faible,2023-11-05,08:25,en cours de traitement
+42,user456,Problème d'impression de documents confidentiels,Documents confidentiels non imprimés,haute,2023-11-04,11:00,fermé
+43,user789,Demande de migration de données,Migration de données vers un nouveau serveur,moyenne,2023-11-03,13:35,en cours de traitement
+44,user123,Besoin d'aide pour un logiciel de CAO,Support pour logiciel de conception assistée par ordinateur,faible,2023-11-02,09:10,en cours de traitement
+45,user456,Demande de configuration de réseau,Configuration d'une nouvelle salle de réunion,haute,2023-11-01,11:45,fermé
+46,user789,Problème avec l'outil de collaboration,Difficulté à partager des fichiers,moyenne,2023-10-31,14:20,en cours de traitement
+47,user123,Demande de formation pour logiciel de montage vidéo,Formation sur logiciel de montage professionnel,faible,2023-10-30,08:55,en cours de traitement
+48,user456,Problème avec le logiciel de CRM,Données erronées dans le logiciel de gestion de la relation client,haute,2023-10-29,11:30,fermé
+49,user789,Demande d'extension de stockage,Plus d'espace de stockage requis,moyenne,2023-10-28,15:05,en cours de traitement
+50,user123,Besoin d'aide pour un logiciel de gestion financière,Assistance pour logiciel de comptabilité,faible,2023-10-27,09:40,en cours de traitement
+51,user456,Demande de réparation de périphérique,Imprimante multifonction en panne,haute,2023-10-26,12:15,fermé
+52,user789,Problème avec l'application de planning,Erreurs dans l'affichage du planning,moyenne,2023-10-25,14:50,en cours de traitement
+53,user123,Demande de maintenance du serveur,Maintenance préventive du serveur,faible,2023-10-24,08:25,en cours de traitement
+54,user456,Problème avec le logiciel de gestion de projet,Données manquantes dans le logiciel,haute,2023-10-23,11:00,fermé
+55,user789,Demande de support pour logiciel de statistiques,Assistance pour logiciel d'analyse de données,moyenne,2023-10-22,13:35,en cours de traitement
+56,user123,Besoin d'assistance pour réunion en visioconférence,Configuration de visioconférence,faible,2023-10-21,09:10,en cours de traitement
+57,user456,Problème avec l'outil de gestion des tickets,Tickets non attribués correctement,haute,2023-10-20,11:45,fermé
+58,user789,Demande de mise à jour de logiciel,Installation de la dernière version du logiciel,moyenne,2023-10-19,15:20,en cours de traitement
+59,user123,Problème avec le logiciel de gestion des stocks,Incohérences dans les stocks enregistrés,faible,2023-10-18,08:55,en cours de traitement
+60,user456,Demande de configuration d'un serveur dédié,Configuration d'un serveur pour projet spécifique,haute,2023-10-17,12:30,fermé
+61,user789,Problème avec le logiciel de facturation,Factures non générées correctement,moyenne,2023-10-16,14:05,en cours de traitement
+62,user123,Demande d'accès à une application spécifique,Permissions pour logiciel spécifique,faible,2023-10-15,09:40,en cours de traitement
+63,user456,Problème avec l'outil de communication interne,Messages non délivrés,haute,2023-10-14,12:15,fermé
+64,user789,Demande d'assistance pour un événement,Support technique pour conférence à venir,moyenne,2023-10-13,15:50,en cours de traitement
+65,user123,Besoin de formation sur un logiciel spécifique,Formation sur logiciel de gestion de stock,faible,2023-10-12,09:25,en cours de traitement
+66,user456,Demande de déblocage de compte,Compte utilisateur verrouillé,haute,2023-10-11,12:00,fermé
+67,user789,Problème d'accès aux serveurs,Inaccessibilité aux serveurs de données,moyenne,2023-10-10,14:35,en cours de traitement
+68,user123,Demande de configuration d'emails professionnels,Configuration de boîtes mails supplémentaires,faible,2023-10-09,09:10,en cours de traitement
+69,user456,Problème avec le logiciel de comptabilité,Erreur dans les soldes,haute,2023-10-08,11:45,fermé
+70,user789,Besoin d'aide pour un logiciel de design,Support pour logiciel de retouche photo,moyenne,2023-10-07,15:20,en cours de traitement
+71,user123,Demande de matériel pour télétravail,Équipement nécessaire pour le télétravail,faible,2023-10-06,08:55,en cours de traitement
+72,user456,Problème avec le VPN,Connexion au réseau d'entreprise impossible,haute,2023-10-05,12:30,fermé
+73,user789,Demande de mise à jour logicielle,Mise à jour des logiciels de sécurité requis,haute,2023-10-04,15:05,en cours de traitement
+74,user456,Demande de réparation de matériel informatique,Ordinateur de bureau en panne,haute,2023-10-03,11:40,fermé
+75,user789,Problème avec l'application de gestion des tâches,Bugs dans l'affichage des tâches,moyenne,2023-10-02,14:15,en cours de traitement
+76,user123,Demande de réinitialisation de serveur,Serveur instable,faible,2023-10-01,09:50,en cours de traitement
+77,user456,Problème d'impression de documents confidentiels,Documents confidentiels non imprimés,haute,2023-09-30,12:25,fermé
+78,user789,Demande de migration de données,Migration de données vers un nouveau serveur,moyenne,2023-09-29,16:00,en cours de traitement
+79,user123,Besoin d'aide pour un logiciel de CAO,Support pour logiciel de conception assistée par ordinateur,faible,2023-09-28,10:35,en cours de traitement
+80,user456,Demande de configuration de réseau,Configuration d'une nouvelle salle de réunion,haute,2023-09-27,13:10,fermé
+81,user789,Problème avec l'outil de collaboration,Difficulté à partager des fichiers,moyenne,2023-09-26,15:45,en cours de traitement
+82,user123,Demande de formation pour logiciel de montage vidéo,Formation sur logiciel de montage professionnel,faible,2023-09-25,09:20,en cours de traitement
+83,user456,Problème avec le logiciel de CRM,Données erronées dans le logiciel de gestion de la relation client,haute,2023-09-24,11:55,fermé
+84,user789,Demande d'extension de stockage,Plus d'espace de stockage requis,moyenne,2023-09-23,14:30,en cours de traitement
+85,user123,Besoin d'aide pour un logiciel de gestion financière,Assistance pour logiciel de comptabilité,faible,2023-09-22,08:05,en cours de traitement
+86,user456,Demande de réparation de périphérique,Imprimante multifonction en panne,haute,2023-09-21,10:40,fermé
+87,user789,Problème avec l'application de planning,Erreurs dans l'affichage du planning,moyenne,2023-09-20,13:15,en cours de traitement
+88,user123,Demande de maintenance du serveur,Maintenance préventive du serveur,faible,2023-09-19,09:50,en cours de traitement
+89,user456,Problème avec le logiciel de gestion de projet,Données manquantes dans le logiciel,haute,2023-09-18,12:25,fermé
+90,user789,Demande de support pour logiciel de statistiques,Assistance pour logiciel d'analyse de données,moyenne,2023-09-17,15:00,en cours de traitement
+91,user123,Besoin d'assistance pour réunion en visioconférence,Configuration de visioconférence,faible,2023-09-16,09:35,en cours de traitement
+92,user456,Problème avec l'outil de gestion des tickets,Tickets non attribués correctement,haute,2023-09-15,12:10,fermé
+93,user789,Demande de mise à jour de logiciel,Installation de la dernière version du logiciel,moyenne,2023-09-14,14:45,en cours de traitement
+94,user123,Problème avec le logiciel de gestion des stocks,Incohérences dans les stocks enregistrés,faible,2023-09-13,08:20,en cours de traitement
+95,user456,Demande de configuration d'un serveur dédié,Configuration d'un serveur pour projet spécifique,haute,2023-09-12,10:55,fermé
+96,user789,Problème avec le logiciel de facturation,Factures non générées correctement,moyenne,2023-09-11,13:30,en cours de traitement
+97,user123,Demande d'accès à une application spécifique,Permissions pour logiciel spécifique,faible,2023-09-10,09:05,en cours de traitement
+98,user456,Problème avec l'outil de communication interne,Messages non délivrés,haute,2023-09-09,11:40,fermé
+99,user789,Demande de mise à jour logicielle,Mise à jour des logiciels de sécurité requis,moyenne,2023-09-08,14:15,en cours de traitement
+100,user123,Besoin d'assistance pour un projet urgent,Support pour logiciel de modélisation,faible,2023-09-07,08:50,en cours de traitement
+101,user123,Demande d'assistance,Problème avec l'imprimante,haute,2022-12-15,09:30,en cours de traitement
+102,user456,Problème de connexion,Impossible de se connecter au réseau,moyenne,2022-12-14,11:45,fermé
+103,user789,Besoin d'aide pour un logiciel,Erreur inconnue lors de l'utilisation,haute,2022-12-13,14:20,en cours de traitement
+104,user789,Demande de formation,Formation sur le nouveau logiciel requis,faible,2022-12-12,10:00,en cours de traitement
+105,user456,Problème de messagerie,Emails non reçus dans la boîte de réception,moyenne,2022-12-11,16:55,fermé
+106,user123,Demande de matériel,Nouveau bureau requis pour le département,haute,2022-12-10,13:10,en cours de traitement
+107,user789,Problème avec le système,Écrans figés après la mise à jour,haute,2022-12-09,08:45,en cours de traitement
+108,user456,Besoin d'assistance téléphonique,Configuration du téléphone professionnel,faible,2022-12-08,09:20,en cours de traitement
+109,user123,Problème d'accès aux fichiers,Impossible d'ouvrir certains documents,haute,2022-12-07,14:35,en cours de traitement
+110,user789,Demande de dépannage,Dysfonctionnement du système de ventilation,haute,2022-12-06,12:00,fermé
+111,user123,Demande de modification de compte,Changement de droits d'accès requis,faible,2022-12-05,10:25,en cours de traitement
+112,user456,Besoin d'aide pour un logiciel,Interface peu intuitive,faible,2022-12-04,16:10,en cours de traitement
+113,user789,Demande de réinitialisation du mot de passe,Mot de passe oublié,faible,2022-12-03,11:55,fermé
+114,user123,Problème de connexion à distance,Accès au réseau depuis l'extérieur impossible,moyenne,2022-12-02,08:30,en cours de traitement
+115,user456,Demande de matériel informatique,Ordinateur portable requis,haute,2022-12-01,15:15,en cours de traitement
+116,user789,Problème d'impression,Impression de documents trop lente,moyenne,2022-11-30,13:40,fermé
+117,user123,Besoin d'assistance pour un projet,Support pour logiciel de gestion de projet,haute,2022-11-29,09:05,en cours de traitement
+118,user456,Demande d'information sur un logiciel spécifique,Renseignements sur la dernière version du logiciel,moyenne,2022-11-28,11:50,en cours de traitement
+119,user789,Problème avec l'application mobile,L'application se ferme inopinément,moyenne,2022-11-27,14:25,fermé
+120,user123,Demande de sauvegarde des données,Sauvegarde régulière des fichiers requis,faible,2022-11-26,10:00,en cours de traitement
+120,user456,Problème avec l'outil de collaboration,Problème de partage de fichiers,moyenne,2020-01-01,09:30,en cours de traitement
+121,user123,Demande de configuration de réseau,Configuration d'une nouvelle salle de réunion,haute,2020-01-02,10:45,fermé
+122,user789,Problème avec l'application de planning,Erreurs dans l'affichage du planning,moyenne,2020-01-03,11:20,en cours de traitement
+123,user456,Demande de maintenance du serveur,Maintenance préventive du serveur,faible,2020-01-04,12:55,en cours de traitement
+124,user789,Problème avec le logiciel de gestion de projet,Données manquantes dans le logiciel,haute,2020-01-05,14:30,fermé
+125,user123,Demande de support pour logiciel de statistiques,Assistance pour logiciel d'analyse de données,faible,2020-01-06,08:05,en cours de traitement
+126,user456,Besoin d'assistance pour réunion en visioconférence,Configuration de visioconférence,haute,2020-01-07,09:40,fermé
+127,user789,Problème avec l'outil de gestion des tickets,Tickets non attribués correctement,moyenne,2020-01-08,11:15,en cours de traitement
+128,user123,Demande de mise à jour de logiciel,Installation de la dernière version du logiciel,faible,2020-01-09,12:50,fermé
+129,user456,Problème avec le logiciel de gestion des stocks,Incohérences dans les stocks enregistrés,haute,2020-01-10,14:25,en cours de traitement
+130,user789,Demande de configuration d'un serveur dédié,Configuration d'un serveur pour projet spécifique,moyenne,2020-01-11,15:00,fermé
+131,user123,Problème avec le logiciel de facturation,Factures non générées correctement,faible,2020-01-12,08:35,en cours de traitement
+132,user456,Demande d'accès à une application spécifique,Permissions pour logiciel spécifique,haute,2020-01-13,10:10,fermé
+133,user789,Besoin d'assistance pour un projet urgent,Support pour logiciel de modélisation,moyenne,2020-01-14,11:45,en cours de traitement
+134,user123,Demande de réparation de périphérique,Imprimante multifonction en panne,faible,2020-01-15,13:20,en cours de traitement
+135,user456,Problème avec l'outil de communication interne,Messages non délivrés,haute,2020-01-16,14:55,fermé
+136,user789,Demande de mise à jour logicielle,Mise à jour des logiciels de sécurité requis,moyenne,2020-01-17,08:30,en cours de traitement
+137,user123,Besoin d'aide pour un logiciel de CAO,Support pour logiciel de conception assistée par ordinateur,faible,2020-01-18,10:05,en cours de traitement
+138,user456,Problème avec le logiciel de gestion de projet,Données manquantes dans le logiciel,haute,2020-01-19,11:40,fermé
+139,user789,Demande de support pour logiciel de statistiques,Assistance pour logiciel d'analyse de données,moyenne,2020-01-20,13:15,en cours de traitement
+140,user123,Demande d'assistance,Problème avec l'imprimante,haute,2021-01-01,09:30,en cours de traitement
+141,user456,Problème de connexion,Impossible de se connecter au réseau,moyenne,2021-01-02,11:45,fermé
+142,user789,Besoin d'aide pour un logiciel,Erreur inconnue lors de l'utilisation,haute,2021-01-03,14:20,en cours de traitement
+143,user789,Demande de formation,Formation sur le nouveau logiciel requis,faible,2021-01-04,10:00,en cours de traitement
+144,user456,Problème de messagerie,Emails non reçus dans la boîte de réception,moyenne,2021-01-05,16:55,fermé
+145,user123,Demande d'assistance,Problème avec l'imprimante,haute,2021-01-06,09:30,en cours de traitement
+146,user456,Problème de connexion,Impossible de se connecter au réseau,moyenne,2021-01-07,11:45,fermé
+147,user789,Besoin d'aide pour un logiciel,Erreur inconnue lors de l'utilisation,haute,2021-01-08,14:20,en cours de traitement
+148,user789,Demande de formation,Formation sur le nouveau logiciel requis,faible,2021-01-09,10:00,en cours de traitement
+149,user456,Problème de messagerie,Emails non reçus dans la boîte de réception,moyenne,2021-01-10,16:55,fermé
+150,user123,Demande d'assistance,Problème avec l'imprimante,haute,2021-01-11,09:30,en cours de traitement
+151,user456,Problème de connexion,Impossible de se connecter au réseau,moyenne,2021-01-12,11:45,fermé
+152,user789,Besoin d'aide pour un logiciel,Erreur inconnue lors de l'utilisation,haute,2021-01-13,14:20,en cours de traitement
+153,user789,Demande de formation,Formation sur le nouveau logiciel requis,faible,2021-01-14,10:00,en cours de traitement
+154,user456,Problème de messagerie,Emails non reçus dans la boîte de réception,moyenne,2021-01-15,16:55,fermé
+155,user123,Demande d'assistance,Problème avec l'imprimante,haute,2021-01-16,09:30,en cours de traitement
+156,user456,Problème de connexion,Impossible de se connecter au réseau,moyenne,2021-01-17,11:45,fermé
+157,user789,Besoin d'aide pour un logiciel,Erreur inconnue lors de l'utilisation,haute,2021-01-18,14:20,en cours de traitement
+158,user789,Demande de formation,Formation sur le nouveau logiciel requis,faible,2021-01-19,10:00,en cours de traitement
+159,user456,Problème de messagerie,Emails non reçus dans la boîte de réception,moyenne,2021-01-20,16:55,fermé
+160,user123,Demande d'assistance,Problème avec l'imprimante,haute,2021-01-21,09:30,en cours de traitement
+161,user456,Problème de connexion,Impossible de se connecter au réseau,moyenne,2021-01-22,11:45,fermé
+162,user789,Besoin d'aide pour un logiciel,Erreur inconnue lors de l'utilisation,haute,2021-01-23,14:20,en cours de traitement
+163,user789,Demande de formation,Formation sur le nouveau logiciel requis,faible,2021-01-24,10:00,en cours de traitement
+164,user456,Problème de messagerie,Emails non reçus dans la boîte de réception,moyenne,2021-01-25,16:55,fermé
+165,user123,Demande d'assistance,Problème avec l'imprimante,haute,2021-01-26,09:30,en cours de traitement
+166,user456,Problème de connexion,Impossible de se connecter au réseau,moyenne,2021-01-27,11:45,fermé
+167,user789,Besoin d'aide pour un logiciel,Erreur inconnue lors de l'utilisation,haute,2021-01-28,14:20,en cours de traitement
+168,user789,Demande de formation,Formation sur le nouveau logiciel requis,faible,2021-01-29,10:00,en cours de traitement
+169,user456,Problème de messagerie,Emails non reçus dans la boîte de réception,moyenne,2021-01-30,16:55,fermé
+170,user123,Demande d'assistance,Problème avec l'imprimante,haute,2021-01-31,09:30,en cours de traitement
+171,user456,Problème de connexion,Impossible de se connecter au réseau,moyenne,2021-02-01,11:45,fermé
+172,user789,Besoin d'aide pour un logiciel,Erreur inconnue lors de l'utilisation,haute,2021-02-02,14:20,en cours de traitement
+173,user789,Demande de formation,Formation sur le nouveau logiciel requis,faible,2021-02-03,10:00,en cours de traitement
+174,user456,Problème de messagerie,Emails non reçus dans la boîte de réception,moyenne,2021-02-04,16:55,fermé
+175,user123,Demande d'assistance,Problème avec l'imprimante,haute,2021-02-05,09:30,en cours de traitement
+176,user456,Problème de connexion,Impossible de se connecter au réseau,moyenne,2021-02-06,11:45,fermé
+177,user789,Besoin d'aide pour un logiciel,Erreur inconnue lors de l'utilisation,haute,2021-02-07,14:20,en cours de traitement
