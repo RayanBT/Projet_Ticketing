@@ -9,6 +9,7 @@ session_start();
     <title>Connexion & Inscription</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="../CSS/style_connexion_inscription_2.css" rel="stylesheet">
+    <link href="../CSS/style_volet_information.css" rel="stylesheet">
 </head>
 <body>
     <main>
@@ -34,7 +35,7 @@ session_start();
                     <input type="text" id="login_connexion" placeholder="Login" name="login_connexion">
                     <label for="password_connexion">Mot de passe :</label>
                     <input type="password" id="password_connexion" placeholder="Mot de passe" name="mot_de_passe">
-                    <a href="#">mot de passe oublié ?</a> <!--Rediriger vers le formulaire php pour changer de mot de passe-->
+                    <a href="ChangePassword.php">mot de passe oublié ?</a> <!--Rediriger vers le formulaire php pour changer de mot de passe-->
                     <button type="submit" name="connexion">Connexion</button>
                 </form>
             </div>

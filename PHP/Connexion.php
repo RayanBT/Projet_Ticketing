@@ -2,7 +2,6 @@
 session_start();
 // Inclure le fichier de configuration des logs
 require_once('Config.php');
-
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 // Vérifie si le formulaire a été soumis
@@ -13,6 +12,7 @@ if (isset($_POST["connexion"])){
     if (!empty($_POST['login_connexion']) and !empty($_POST['mot_de_passe'])) {
         // Récupérez l'e-mail et le mot de passe saisis dans le formulaire de connexion
         $login = $_POST["login_connexion"];
+        $_SESSION['login'] = $login; // pour afficher le login sur la page user
         $mot_de_passe = $_POST["mot_de_passe"];
 
 // Connexion à la base de données
@@ -36,7 +36,16 @@ if (isset($_POST["connexion"])){
             // Vérifiez le mot de passe (en MD5)
             if (md5($mot_de_passe) === $hashed_password) {
                 logMessage("Connexion réussie pour l'utilisateur avec le login : $login");
-                header("Location: ../PHP/utilisateur.php");
+                $query = "SELECT user_role FROM $tab WHERE Login = '$login'";
+                $resultat = mysqli_query($connection, $query);
+                if ($resultat){
+                    $row = mysqli_fetch_assoc($resultat);
+                    $_SESSION['user_role'] = $row['user_role'];
+                    header("Location: ../PHP/authentification.php");
+                }else{
+                    logMessage("User_role est vide pour l'utilisateur avec le login : $login");
+                    header('Location: ../PHP/form_connexion_inscription.php');
+                }
             } else {
                 logMessage("Tentative de connexion échouée pour l'utilisateur avec le login : $login", 'error');
                 $_SESSION['message'] = "Échec de connexion. Le mot de passe est incorrect.";
@@ -61,6 +70,5 @@ if (isset($_POST["connexion"])){
         header('Location: ../PHP/form_connexion_inscription.php');
         exit();
     }
-    $_SESSION['login'] = $login; // pour afficher le login sur la page user
 }
 ?>

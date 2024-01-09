@@ -12,10 +12,9 @@ $database = "BD_Ticketing";
 $table = "tickets";
 
 $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur de connexion à la base de données");
-
 ?>
 
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,6 +34,9 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
             </li>
             <li>
                 <a href="form_creation_ticket.php"><i class="fa fa-plus-circle"></i> &nbsp; Créer un ticket</a>
+            </li>
+            <li>
+                <a href="page_adm_web_traitement_ticket.php"><i class="fa fa-cogs"></i> &nbsp; Traitement ticket</a>
             </li>
             <li>
                 <a href="#hisorique-ticket"><i class="fa fa-ticket"></i> &nbsp; Historique de ticket</a>
@@ -66,30 +68,35 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
 
-                if ($result) {
-                    echo "<table style='width: 400px; height: 400px'>";
-                    echo "<tr>";
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        // Affiche les en-têtes de colonnes une seule fois
-                        if (empty($headerPrinted)) {
-                            foreach ($row as $key => $value) {
-                                echo "<th>$key</th>";
-                            }
-                            echo "</tr>";
-                            $headerPrinted = true;
-                        }
+                echo "<table style='width: 400px; height: 400px'>";
 
-                        // Affiche les données de chaque ligne
+                // Affiche les en-têtes de colonnes
+                echo "<tr>";
+                if ($result && mysqli_num_rows($result) > 0) {
+                    $row = mysqli_fetch_assoc($result);
+                    foreach ($row as $key => $value) {
+                        echo "<th>$key</th>";
+                    }
+                    echo "</tr>";
+
+                    // Affiche les données de chaque ligne
+                    do {
                         echo "<tr>";
                         foreach ($row as $value) {
                             echo "<td>$value</td>";
                         }
                         echo "</tr>";
-                    }
-                    echo "</table>";
+                    } while ($row = mysqli_fetch_assoc($result));
                 } else {
-                    echo "Erreur lors de la récupération des données de la base de données.";
+                    // Si aucune donnée, générer des lignes vides
+                    for ($i = 0; $i < 10; $i++) {
+                        echo "<tr>";
+                        echo "<td></td><td></td><td></td><td></td><td></td><td></td><td></td>";
+                        echo "</tr>";
+                    }
                 }
+
+                echo "</table>";
             } else {
                 echo "Erreur lors de la préparation de la requête.";
             }
@@ -118,3 +125,4 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
 </div>
 </body>
 </html>
+

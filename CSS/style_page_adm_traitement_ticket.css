@@ -1,0 +1,26 @@
+input[type="submit"]{
+    background-color: #29648A;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    background-color: #0056b3;
+}
+
+select {
+    background-color: transparent;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}

@@ -1,0 +1,29 @@
+.volet {
+    /* Styles par défaut */
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    background-color: #4CAF50; /* Couleur par défaut (vert) */
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.volet.show {
+    opacity: 1;
+}
+
+/* Style pour la couleur rouge */
+.volet.red {
+    background-color: #f44336;
+}
+
+/* Style pour la couleur verte */
+.volet.green {
+    background-color: #4CAF50;
+}

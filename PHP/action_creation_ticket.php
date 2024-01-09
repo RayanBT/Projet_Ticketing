@@ -16,7 +16,7 @@ if (!empty($_POST['sujet']) && !empty($_POST['description']) && !empty($_POST['p
     $tab = "tickets";
 
     // Préparation de la requête SQL avec des paramètres
-    $query = "INSERT INTO $tab (login, sujet, description, priorite) VALUES (?, ?, ?, ?)";
+    $query = "INSERT INTO $tab (login, sujet, description, priorite, date_creation) VALUES (?, ?, ?, ?, NOW())";
     $stmt = mysqli_prepare($connection, $query);
 
     // Liaison des valeurs aux paramètres dans la requête préparée
@@ -27,7 +27,7 @@ if (!empty($_POST['sujet']) && !empty($_POST['description']) && !empty($_POST['p
 
     if ($success) {
         // Redirection vers utilisateur.php si l'insertion est réussie
-        header("Location: utilisateur.php");
+        header("Location: authentification.php");
         exit(); // Assurez-vous d'utiliser exit() après la redirection pour arrêter l'exécution du script
     } else {
         echo "Erreur lors de l'insertion des données : " . mysqli_error($connection);

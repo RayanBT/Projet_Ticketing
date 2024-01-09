@@ -83,3 +83,72 @@
 [05-12-2023 12:07:53] [info] [IP: ::1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : rayan@gmail.com
 [05-12-2023 12:08:03] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : rayan
 [05-12-2023 12:11:24] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : armand
+[05-01-2024 23:34:30] [error] [IP: ::1]: Le login n'existe pas dans la base de données.
+[05-01-2024 23:34:45] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : rayan
+[05-01-2024 23:34:45] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : rayan
+[06-01-2024 15:00:47] [info] [IP: ::1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : admweb@gmail.com
+[06-01-2024 15:00:54] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[06-01-2024 15:00:54] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : gestion
+[07-01-2024 00:14:26] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[07-01-2024 00:14:26] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[07-01-2024 13:34:18] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[07-01-2024 13:34:18] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[07-01-2024 13:57:19] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : gestion
+[07-01-2024 13:57:26] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[07-01-2024 13:57:26] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[07-01-2024 14:38:57] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[07-01-2024 14:38:57] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[07-01-2024 14:39:03] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[07-01-2024 15:46:13] [info] [IP: ::1]: Les statuts ont été mis à jour avec succès.
+[07-01-2024 15:46:17] [info] [IP: ::1]: Les statuts ont été mis à jour avec succès.
+[07-01-2024 15:46:19] [info] [IP: ::1]: Les statuts ont été mis à jour avec succès.
+[07-01-2024 15:47:40] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[07-01-2024 15:47:40] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[07-01-2024 15:53:18] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[07-01-2024 15:53:18] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[08-01-2024 10:21:58] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[08-01-2024 10:21:58] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[08-01-2024 10:22:08] [info] [IP: ::1]: Les statuts ont été mis à jour avec succès.
+[08-01-2024 11:58:26] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[08-01-2024 11:58:26] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[08-01-2024 11:59:03] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[08-01-2024 11:59:03] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[08-01-2024 11:59:59] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[08-01-2024 11:59:59] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[08-01-2024 12:03:09] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[08-01-2024 12:03:09] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[09-01-2024 18:57:42] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[09-01-2024 18:57:42] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[09-01-2024 18:57:59] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : gestion
+[09-01-2024 18:58:05] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[09-01-2024 18:58:05] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[09-01-2024 19:10:00] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[09-01-2024 19:10:00] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[09-01-2024 19:11:27] [info] [IP: ::1]: Mot de passe changé avec succès pour l'utilisateur avec l'ID : 
+[09-01-2024 19:11:27] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[09-01-2024 19:11:46] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : gestion
+[09-01-2024 19:11:51] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[09-01-2024 19:11:51] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[09-01-2024 19:16:24] [error] [IP: ::1]: Mot de passe actuel incorrect pour l'utilisateur avec le login : gestion
+[09-01-2024 19:17:32] [error] [IP: ::1]: Mot de passe actuel incorrect pour l'utilisateur avec le login : gestion
+[09-01-2024 19:19:25] [error] [IP: ::1]: Mot de passe actuel incorrect pour l'utilisateur avec le login : gestion
+[09-01-2024 19:20:42] [info] [IP: ::1]: Mot de passe changé avec succès pour l'utilisateur avec le login : gestion
+[09-01-2024 19:20:42] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[09-01-2024 19:35:22] [info] [IP: ::1]: Mot de passe changé avec succès pour l'utilisateur avec le login : gestion
+[09-01-2024 19:35:22] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[09-01-2024 19:43:03] [error] [IP: ::1]: Mot de passe actuel incorrect pour l'utilisateur avec le login : gestion
+[09-01-2024 19:43:09] [info] [IP: ::1]: Mot de passe changé avec succès pour l'utilisateur avec le login : gestion
+[09-01-2024 19:43:09] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[09-01-2024 19:43:09] [info] [IP: ::1]: Je passe dans l'authentification.php voici le message : 
+[09-01-2024 19:44:01] [info] [IP: ::1]: Mot de passe changé avec succès pour l'utilisateur avec le login : gestion
+[09-01-2024 19:44:01] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[09-01-2024 19:44:01] [info] [IP: ::1]: Je passe dans l'authentification.php voici le message : Mot de passe changé avec succès
+[09-01-2024 19:45:42] [error] [IP: ::1]: Mot de passe actuel incorrect pour l'utilisateur avec le login : gestion
+[09-01-2024 19:45:47] [info] [IP: ::1]: Mot de passe changé avec succès pour l'utilisateur avec le login : gestion
+[09-01-2024 19:45:47] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[09-01-2024 19:45:47] [info] [IP: ::1]: Je passe dans l'authentification.php voici le message : Mot de passe changé avec succès
+[09-01-2024 19:52:58] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[09-01-2024 19:52:58] [info] [IP: ::1]: Je passe dans l'authentification.php voici le message : 
+[09-01-2024 23:41:00] [info] [IP: ::1]: Les statuts ont été mis à jour avec succès.
+[09-01-2024 23:41:03] [info] [IP: ::1]: Les statuts ont été mis à jour avec succès.
+[09-01-2024 23:41:05] [info] [IP: ::1]: Les statuts ont été mis à jour avec succès.

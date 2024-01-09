@@ -21,9 +21,10 @@ session_start();
 
         <label for="priorite">Priorité :</label>
         <select id="priorite" name="priorite">
-            <option value="faible">Faible</option>
-            <option value="moyenne">Moyenne</option>
-            <option value="haute">Haute</option>
+            <option value="Faible">Faible</option>
+            <option value="Moyen">Moyen</option>
+            <option value="Important">Important</option>
+            <option value="Urgent">Urgent</option>
         </select><br><br>
 
         <input type="submit" value="Créer le ticket">

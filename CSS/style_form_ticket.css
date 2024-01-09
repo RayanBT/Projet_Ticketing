@@ -40,7 +40,8 @@ label {
 
 /* Style des inputs et textarea */
 input[type="text"],
-textarea {
+textarea,
+input[type="password"]{
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;
