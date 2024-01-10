@@ -3,7 +3,7 @@ session_start();
 // Inclure le fichier de configuration des logs
 require_once('Config.php');
 // Vérifie si le formulaire a été soumis
-if (isset($_POST["inscription"])) {
+if (isset($_POST["inscription"]) or isset($_POST["inscription_technicien"])) {
     $host = "localhost";
     $user = "root";
     $password = "";
@@ -49,20 +49,26 @@ if (isset($_POST["inscription"])) {
             $_SESSION['message'] = 'Échec inscription. Adresse e-mail existent déjà.';
             $_SESSION['couleur'] = false;
             header('Location: ../PHP/form_connexion_inscription.php');
+            exit();
         } elseif(mysqli_stmt_num_rows($stmt2) > 0){
             $_SESSION['message'] = 'Échec de inscription. Le login existent déjà.';
             $_SESSION['couleur'] = false;
             header('Location: ../PHP/form_connexion_inscription.php');
+            exit();
         } else {
-            // Requête SQL correcte avec des marqueurs de paramètres
-            $requete = "INSERT INTO `User` (`id_User`,`Nom`, `Login`, `Email`, `Mdp`) VALUES (NULL,?, ?, ?, MD5(?))";
+            if (isset($_POST["inscription_technicien"])){
+                $requete = "INSERT INTO `User` (`id_User`,`Nom`, `Login`, `Email`, `Mdp`, `user_role`) VALUES (NULL,?, ?, ?, MD5(?), 'technicien')";
+            } elseif (isset($_POST["inscription"])){
+                // Requête SQL correcte avec des marqueurs de paramètres
+                $requete = "INSERT INTO `User` (`id_User`,`Nom`, `Login`, `Email`, `Mdp`) VALUES (NULL,?, ?, ?, MD5(?))";
+            }
 
             // Préparation de la requête
             $reqprepare = mysqli_prepare($connection, $requete);
 
             if (!$reqprepare) {
                 die("Erreur de préparation de la requête : " . mysqli_error($connection));
-            }else{
+            } else {
                 mysqli_stmt_bind_param($reqprepare, 'ssss', $nom, $login, $email, $mot_de_passe);
 
                 // Exécution de la requête préparée
@@ -72,29 +78,31 @@ if (isset($_POST["inscription"])) {
                     logMessage("Inscription réussie pour l'utilisateur avec l'adresse e-mail : $email");
                     $_SESSION['message'] = "Inscription réussie";
                     $_SESSION['couleur'] = true;
+                    if (isset($_POST["inscription_technicien"])){
+                        header('Location: ../PHP/page_adm_web.php');
+                        exit();
+                    }
                     header('Location: ../PHP/form_connexion_inscription.php');
                     exit();
                 } else {
                     logMessage("Echec de l'inscription pour l'utilisateur avec l'adresse e-mail : $email", 'error');
                     $_SESSION['message'] = "Échec inscription";
                     $_SESSION['couleur'] = false;
+                    if (isset($_POST["inscription_technicien"])){
+                        header('Location: ../PHP/form_creation_technicien.php');
+                        exit();
+                    }
                     header('Location: ../PHP/form_connexion_inscription.php');
                     exit();
                 }
-
                 // Fermeture de la requête préparée
                 mysqli_stmt_close($reqprepare);
             }
         }
 
-        // Fermeture de la connexion à la base de données
+// Fermeture de la connexion à la base de données
         mysqli_close($connection);
     }
-    // Affiche les valeurs stockées dans les variables
-    echo "Nom : " . $nom . "<br>";
-    echo "Login : " . $login . "<br>";
-    echo "Adresse mail : " . $email . "<br>";
-    echo "Mot de passe : " . $mot_de_passe . "<br>";
 }
 ?>
 

@@ -25,7 +25,7 @@ session_start();
                     <input type="email" id="email_inscription" placeholder="Email" name="email">
                     <label for="password_inscription">Mot de passe :</label>
                     <input type="password" id="password_inscription" placeholder="Mot de passe" name="mot_de_passe">
-                    <button type="submit" name='inscription' value='Inscription'>Inscription</button>
+                    <button type="submit" name='inscription' value='inscription'>Inscription</button>
                 </form>
             </div>
             <div class="form-container sign-in">
@@ -64,6 +64,7 @@ session_start();
             echo "<script>afficherVolet('$message', '$couleur');</script>";
             // Vider la session après utilisation
             unset($_SESSION['couleur']);
+            unset($_SESSION['message']);
         } else {
             echo "<script>console.log('KO');</script>";
         }

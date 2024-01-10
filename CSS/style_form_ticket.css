@@ -41,7 +41,8 @@ label {
 /* Style des inputs et textarea */
 input[type="text"],
 textarea,
-input[type="password"]{
+input[type="password"],
+input[type="email"]{
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;

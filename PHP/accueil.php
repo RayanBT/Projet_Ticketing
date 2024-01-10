@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link href="../CSS/style_seconde_proposition.css" rel="stylesheet">
+    <link href="../CSS/style_volet_information.css" rel="stylesheet">
 </head>
 <body>
 <div class="page">
@@ -98,6 +99,22 @@
             <br>
             <br>
         </main>
+
+        <script src="../JS/Script.js"></script>
+
+        <?php
+        if (isset($_GET['message'])) {
+            $message = $_GET['message'];
+            $couleur = false;
+            // Appel de la fonction sans inclure à nouveau le script
+            echo "<script>afficherVolet('$message', '$couleur');</script>";
+            // Vider la session après utilisation
+            unset($_SESSION['couleur']);
+            unset($_SESSION['message']);
+        } else {
+            echo "<script>console.log('KO');</script>";
+        }
+        ?>
 
 
 

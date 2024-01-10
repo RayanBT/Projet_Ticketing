@@ -1,7 +1,8 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['login'])) {
-    header("Location: ../PHP/form_connexion_inscription.php");
+    header("Location: ../PHP/Deconnexion.php");
     exit();
 }
 ?>

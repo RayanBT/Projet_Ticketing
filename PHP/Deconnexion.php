@@ -7,7 +7,11 @@ $_SESSION = array();
 
 // Détruire la session
 session_destroy();
-
+if (isset($_GET['erreur'])) {
+    $message = $_GET['erreur'];
+    header("Location: ../PHP/accueil.php?message=$message");
+    exit();
+}
 // Rediriger vers la page d'accueil
 header("Location: accueil.php");
 exit();

@@ -3,6 +3,12 @@ session_start();
 
 // Inclut le fichier de configuration des logs
 require_once('Config.php');
+
+if (!isset($_SESSION['login'])) {
+    header("Location: ../PHP/Deconnexion.php");
+    exit();
+}
+
 $host = "localhost";
 $user = "root";
 $password = "";
