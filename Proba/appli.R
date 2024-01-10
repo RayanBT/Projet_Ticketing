@@ -45,8 +45,17 @@ ui <- fluidPage(
   )
 )
 
-# Serveur Shiny
+# Serveur Shinys
 server <- function(input, output) {
+  output$table <- renderTable({
+    # Afficher le tableau des tickets si l'option choisie est "afficher_valeurs"
+    if (input$variable == "afficher_valeurs") {
+      return(tickets)
+    } else {
+      return(NULL)  # Masquer le tableau pour d'autres options choisies
+    }
+  })
+  
   # Fonction pour créer le graphique
   output$histogram <- renderPlotly({
     # Filtrer les valeurs non finies
@@ -54,8 +63,7 @@ server <- function(input, output) {
     
     # Ajouter l'option pour afficher les valeurs
     if (input$variable == "afficher_valeurs") {
-      output$table <- renderTable(filtered_tickets)
-      return(NULL)
+      return(NULL)  # Ne pas générer de graphique si l'option est "afficher_valeurs"
     }
     
     filtered_tickets <- filtered_tickets %>% filter(!is.na(!!sym(input$variable)))
@@ -68,7 +76,9 @@ server <- function(input, output) {
              y = "Nombre de Tickets") +
         theme_minimal()
       ggplotly(gg)
-    } else if (input$variable == "date_creation" && input$temps == "annee") {
+    } 
+    
+    else if (input$variable == "date_creation" && input$temps == "annee") {
       gg <- ggplot(filtered_tickets, aes_string(x = "year(as.Date(date_creation))")) +
         geom_bar(stat = "count", fill = "skyblue", color = "black") +
         labs(title = "Distribution du nombre de tickets par année",
@@ -76,19 +86,34 @@ server <- function(input, output) {
              y = "Nombre de Tickets") +
         theme_minimal()
       ggplotly(gg)
-    } else if (input$variable == "duree_resolution") {
+    } 
+    
+    else if (input$variable == "duree_resolution") {
       # Créer une colonne pour la durée de résolution
-      filtered_tickets <- filtered_tickets %>%
-        mutate(duree_resolution = as.numeric(difftime(date_fermeture, date_creation, units = "days")))
+      tickets$duree_resolution <- as.numeric(difftime(tickets$date_fermeture, tickets$date_creation, units = "days"))
       
       # Définir des catégories pour la durée de résolution
-      categories <- cut(filtered_tickets$duree_resolution, breaks = c(-Inf, 7, 30, Inf), labels = c("Moins d'une semaine", "Entre une semaine et un mois", "Plus d'un mois"), include.lowest = TRUE)
+      categories <- cut(tickets$duree_resolution, breaks = c(-Inf, 7, 30, Inf),labels = c("Moins d'une semaine", "Entre une semaine et un mois", "Plus d'un mois"), include.lowest = TRUE)
+      
+      # Compter le nombre de tickets dans chaque catégorie
+      count_by_category <- table(categories)
       
       # Créer le camembert avec plot_ly
-      plot_ly(data = data.frame(categories)) %>%
-        add_pie(labels = ~categories, values = ~1) %>%
+      plot_ly(labels = names(count_by_category), values = count_by_category, type = "pie") %>%
         layout(title = "Répartition de la durée de résolution des tickets")
-    } else {
+    } 
+    
+    else if (input$variable == "status") {
+      # Compter les occurrences de chaque statut
+      status_counts <- count(filtered_tickets, status)
+      
+      # Créer le camembert avec plot_ly en utilisant les données de comptage
+      plot_ly(data = status_counts, labels = ~status, values = ~n) %>%
+        add_pie() %>%
+        layout(title = "Répartition des statuts des tickets")
+    } 
+    
+    else {
       gg <- ggplot(filtered_tickets, aes_string(x = input$variable)) +
         geom_bar(stat = "count", fill = "skyblue", color = "black") +
         labs(title = paste("Distribution du nombre de tickets par", input$variable),
@@ -99,6 +124,8 @@ server <- function(input, output) {
     }
   })
 }
+
+
 
 # Lancer l'application Shiny
 shinyApp(ui = ui, server = server)
