@@ -19,6 +19,9 @@ if (isset($user_role)) {
     }elseif ($user_role == "technicien") {
         logMessage("Redirection vers la page_technicien pour l'user avec le login : $login");
         header("Location: ../PHP/page_technicien.php");
+    }elseif ($user_role == "admin_systeme") {
+        logMessage("Redirection vers la page_admin_systeme pour l'user avec le login : $login");
+        header("Location: ../PHP/page_admin_systeme.php");
     }
 }else{
     logMessage("Redirection vers la page accueil.php car il ne dispose pas de role pour l'user avec le login : $login");
