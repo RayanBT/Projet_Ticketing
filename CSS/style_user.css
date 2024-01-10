@@ -114,3 +114,27 @@ th, td{
 .phrase_acceuil{
     text-align: center;
 }
+
+.corps-technicien-ticket {
+    font-family: 'Montserrat', sans-serif;
+    width: 74%;
+    margin-left: 25%;
+    margin-right: 10%;
+    padding-top: 5vh;
+}
+
+.technicien-ticket h2 {
+    color: #333;
+    text-align:justify;
+}
+
+.technicien-ticket p {
+    margin-bottom: 15px;
+    text-align:justify;
+}
+
+.description-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}

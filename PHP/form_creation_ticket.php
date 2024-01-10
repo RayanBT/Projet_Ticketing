@@ -35,6 +35,6 @@ if (!isset($_SESSION['login'])) {
         <input type="submit" value="Créer le ticket">
     </form>
 </div>
-
 </body>
+<a href="authentification.php" class="bouton-redirection">Retour</a>
 </html>

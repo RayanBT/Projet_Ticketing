@@ -18,7 +18,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Page utilisateur</title>
+    <title>Page admin web</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link href="../CSS/style_user.css" rel="stylesheet">
@@ -33,16 +33,13 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                 <a href="authentification.php"><i class="fa fa-home"></i> &nbsp; Accueil</a>
             </li>
             <li>
-                <a href="form_creation_ticket.php"><i class="fa fa-plus-circle"></i> &nbsp; Créer un ticket</a>
-            </li>
-            <li>
                 <a href="form_creation_technicien.php"><i class="fa fa-plus-circle"></i> &nbsp; Création compte technicien</a>
             </li>
             <li>
                 <a href="page_adm_web_traitement_ticket.php"><i class="fa fa-cogs"></i> &nbsp; Traitement ticket</a>
             </li>
             <li>
-                <a href="#hisorique-ticket"><i class="fa fa-ticket"></i> &nbsp; Historique de ticket</a>
+                <a href="#tickets-ouverts"><i class="fa fa-ticket"></i> &nbsp; Tickets Ouverts</a>
             </li>
             <li>
                 <a href="ChangePassword.php"><i class="fa fa-user"></i> &nbsp; Profil</a>
@@ -57,21 +54,21 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
             <h3 class="phrase_acceuil">Bonjour, <?php echo $_SESSION['login']; ?> ravi de vous revoir.</h3>
             <br>
             <br>
-            <h3 id="hisorique-ticket">Historique de ticket :</h3>
+            <h3 id="tickets-ouverts">Tickets ouverts :</h3>
             <br>
             <?php
 
             // Utilisation d'une requête préparée pour éviter les injections SQL
             $login = $_SESSION['login'];
-            $query = "SELECT id_ticket as Id, login as Login, sujet as Sujet, description as Description, priorite as Priorité, DATE_FORMAT(date_creation, '%d/%m/%Y') as 'Date création', statut as Statut FROM $table WHERE login=?";
+            $query = "SELECT id_ticket as Id, login as Login, sujet as Sujet, priorite as Priorité, DATE_FORMAT(date_creation, '%d/%m/%Y') as 'Date création', Statut, Technicien FROM $table WHERE statut!=? and technicien='Personne'";
             $stmt = mysqli_prepare($connection, $query);
-
+            $statut = "fermé";
             if ($stmt) {
-                mysqli_stmt_bind_param($stmt, "s", $login);
+                mysqli_stmt_bind_param($stmt, "s", $statut);
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
 
-                echo "<table style='width: 400px; height: 400px'>";
+                echo "<table style='width: 100%; height: 400px; text-align: center'>";
 
                 // Affiche les en-têtes de colonnes
                 echo "<tr>";
@@ -91,17 +88,83 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                         echo "</tr>";
                     } while ($row = mysqli_fetch_assoc($result));
                 } else {
+                    echo "<tr>";
+                    // Affiche les en-têtes de colonnes
+                    echo "<th>Id</th>";
+                    echo "<th>Crée par</th>";
+                    echo "<th>Sujet</th>";
+                    echo "<th>Niveau d'urgence</th>";
+                    echo "<th>Date de création</th>";
+                    echo "<th>Statut</th>";
+                    echo "<th>Technicien en charge</th>";
+                    echo "</tr>";
                     // Si aucune donnée, générer des lignes vides
-                    for ($i = 0; $i < 10; $i++) {
+                    for ($i = 0; $i < 5; $i++) {
                         echo "<tr>";
                         echo "<td></td><td></td><td></td><td></td><td></td><td></td><td></td>";
                         echo "</tr>";
                     }
                 }
-
                 echo "</table>";
             } else {
                 echo "Erreur lors de la préparation de la requête.";
+            }
+
+            // Requête pour obtenir tous les utilisateurs ayant le rôle "technicien"
+            $queryTechniciens = "SELECT login FROM user WHERE user_role = 'technicien'";
+            $resultTechniciens = mysqli_query($connection, $queryTechniciens);
+
+            // Vérifiez s'il y a des techniciens
+            if ($resultTechniciens && mysqli_num_rows($resultTechniciens) > 0) {
+                // Pour chaque technicien, récupérez les tickets qu'il a pris en charge
+                while ($rowTechnicien = mysqli_fetch_assoc($resultTechniciens)) {
+                    $technicienLogin = $rowTechnicien['login'];
+
+                    // Requête pour obtenir les tickets attribués à un technicien spécifique
+                    $queryTicketsTechnicien = "SELECT id_ticket as Id, login as Login, sujet as Sujet, priorite as Priorité, DATE_FORMAT(date_creation, '%d/%m/%Y') as 'Date création', Statut FROM $table WHERE technicien = ?";
+                    $stmtTicketsTechnicien = mysqli_prepare($connection, $queryTicketsTechnicien);
+
+                    if ($stmtTicketsTechnicien) {
+                        mysqli_stmt_bind_param($stmtTicketsTechnicien, "s", $technicienLogin);
+                        mysqli_stmt_execute($stmtTicketsTechnicien);
+                        $resultTicketsTechnicien = mysqli_stmt_get_result($stmtTicketsTechnicien);
+
+                        // Affiche un titre pour chaque technicien
+                        echo "<h3>Tickets pris en charge par le technicien $technicienLogin :</h3>";
+                        echo "<br>";
+
+                        // Affiche un tableau pour les tickets pris en charge par le technicien
+                        echo "<table style='width: 100%; height: 400px; text-align: center'>";
+                        // Affiche les en-têtes de colonnes
+                        echo "<tr>";
+                        if ($resultTicketsTechnicien && mysqli_num_rows($resultTicketsTechnicien) > 0) {
+                            $rowTicketsTechnicien = mysqli_fetch_assoc($resultTicketsTechnicien);
+                            foreach ($rowTicketsTechnicien as $key => $value) {
+                                echo "<th>$key</th>";
+                            }
+                            echo "</tr>";
+
+                            // Affiche les données de chaque ligne
+                            do {
+                                echo "<tr>";
+                                foreach ($rowTicketsTechnicien as $value) {
+                                    echo "<td>$value</td>";
+                                }
+                                echo "</tr>";
+                            } while ($rowTicketsTechnicien = mysqli_fetch_assoc($resultTicketsTechnicien));
+                        } else {
+                            // Si aucune donnée, générer une ligne vide
+                            echo "<tr>";
+                            echo "<td colspan='6'>Aucun ticket pris en charge.</td>";
+                            echo "</tr>";
+                        }
+                        echo "</table>";
+                    } else {
+                        echo "Erreur lors de la préparation de la requête pour les tickets pris en charge par le technicien $technicienLogin.";
+                    }
+                }
+            } else {
+                echo "Aucun technicien trouvé.";
             }
 
             ?>

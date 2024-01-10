@@ -59,7 +59,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
 
             // Utilisation d'une requête préparée pour éviter les injections SQL
             $login = $_SESSION['login'];
-            $query = "SELECT id_ticket as Id, login as Login, sujet as Sujet, description as Description, priorite as Priorité, DATE_FORMAT(date_creation, '%d/%m/%Y') as 'Date création', statut as Statut FROM $table WHERE login=?";
+            $query = "SELECT id_ticket as Id, Login, Sujet, priorite as Priorité, DATE_FORMAT(date_creation, '%d/%m/%Y') as 'Date création', statut as Statut FROM $table WHERE login=?";
             $stmt = mysqli_prepare($connection, $query);
 
             if ($stmt) {

@@ -2,6 +2,7 @@
 session_start();
 // Inclure le fichier de configuration des logs
 require_once('Config.php');
+require_once ('RC4.php');
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 // Vérifie si le formulaire a été soumis
@@ -9,10 +10,11 @@ if (isset($_POST["connexion"])){
     $host = "localhost";
     $user = "root";
     $password = "";
+    $key_rc4 = "Groupe1";
     if (!empty($_POST['login_connexion']) and !empty($_POST['mot_de_passe'])) {
         // Récupérez l'e-mail et le mot de passe saisis dans le formulaire de connexion
         $login = $_POST["login_connexion"];
-        $_SESSION['login'] = $login; // pour afficher le login sur la page user
+        $_SESSION['login'] = $login;
         $mot_de_passe = $_POST["mot_de_passe"];
 
 // Connexion à la base de données
@@ -34,13 +36,15 @@ if (isset($_POST["connexion"])){
             mysqli_stmt_fetch($stmt);
 
             // Vérifiez le mot de passe (en MD5)
-            if (md5($mot_de_passe) === $hashed_password) {
+            if ($mot_de_passe === rc4_decrypt($hashed_password, $key_rc4)) {
                 logMessage("Connexion réussie pour l'utilisateur avec le login : $login");
                 $query = "SELECT user_role FROM $tab WHERE Login = '$login'";
                 $resultat = mysqli_query($connection, $query);
                 if ($resultat){
                     $row = mysqli_fetch_assoc($resultat);
                     $_SESSION['user_role'] = $row['user_role'];
+                    $_SESSION['message'] = "Connexion réussie. Bienvenue $login !";
+                    $_SESSION['couleur'] = true;
                     header("Location: ../PHP/authentification.php");
                 }else{
                     logMessage("User_role est vide pour l'utilisateur avec le login : $login");

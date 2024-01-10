@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['login'])) {
+if (!isset($_SESSION['login']) or $_SESSION['user_role'] != "admin_web") {
     header("Location: ../PHP/Deconnexion.php");
     exit();
 }
@@ -29,6 +29,6 @@ if (!isset($_SESSION['login'])) {
         <input type="submit" value="Créer le compte technicien" name="inscription_technicien">
     </form>
 </div>
-
 </body>
+<a href="authentification.php" class="bouton-redirection">Retour</a>
 </html>

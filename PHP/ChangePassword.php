@@ -43,6 +43,7 @@ if (isset($_SESSION['message'])) {
 }
 ?>
 </body>
+<a href="authentification.php" class="bouton-redirection">Retour</a>
 </html>
 
 

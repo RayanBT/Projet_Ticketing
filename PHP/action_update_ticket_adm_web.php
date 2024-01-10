@@ -46,6 +46,27 @@ if (isset($_POST['valider'])) {
             logMessage("Les priorités ont été mis à jour avec succès.");
             header('Location: ../PHP/page_adm_web_traitement_ticket.php');
         }
+
+        if (isset($_POST['assigne'])) {
+            $assignations = $_POST['assigne'];
+
+            foreach ($assignations as $key => $value) {
+                // Assurez-vous de valider et échapper les données avant de les utiliser dans la requête SQL
+                $id_ticket = mysqli_real_escape_string($connection, $id_tickets[$key]);
+                $technicien = mysqli_real_escape_string($connection, $value);
+
+                // Utilisez une requête UPDATE pour mettre à jour la colonne 'technicien'
+                $updateTechnicienQuery = "UPDATE $table SET technicien='$technicien' WHERE id_ticket='$id_ticket'";
+                mysqli_query($connection, $updateTechnicienQuery);
+            }
+
+            logMessage("Les techniciens ont été mis à jour avec succès.");
+            header('Location: ../PHP/page_adm_web_traitement_ticket.php');
+        }
+        logMessage("Les tickets ont été mis à jour avec succès.");
+        $_SESSION['message'] = 'Les tickets ont été mis à jour avec succès.';
+        $_SESSION['couleur'] = true;
+        header('Location: ../PHP/page_adm_web_traitement_ticket.php');
     }
 
 

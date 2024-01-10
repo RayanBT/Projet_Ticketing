@@ -187,3 +187,27 @@
 [10-01-2024 14:31:34] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
 [10-01-2024 14:31:34] [info] [IP: ::1]: Je passe dans l'authentification.php voici le message : Inscription réussie
 [10-01-2024 14:31:57] [info] [IP: ::1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : tech2@gmail.com
+[10-01-2024 15:01:43] [info] [IP: ::1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : tech1@gmail.com
+[10-01-2024 15:01:50] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : tech1
+[10-01-2024 15:01:50] [info] [IP: ::1]: Redirection vers la page_technicien pour l'user avec le login : tech1
+[10-01-2024 15:17:51] [info] [IP: ::1]: Redirection vers la page_technicien pour l'user avec le login : tech1
+[10-01-2024 16:27:20] [info] [IP: ::1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : ryry@gmail.com
+[10-01-2024 16:27:27] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : ryry
+[10-01-2024 16:30:32] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : ryry
+[10-01-2024 16:30:32] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : ryry
+[10-01-2024 16:31:30] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : ryry
+[10-01-2024 16:31:30] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : ryry
+[10-01-2024 16:36:35] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : gestion
+[10-01-2024 16:37:21] [info] [IP: ::1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : gestion@gestion.com
+[10-01-2024 16:37:25] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[10-01-2024 16:37:25] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : gestion
+[10-01-2024 16:37:32] [info] [IP: ::1]: Mot de passe changé avec succès pour l'utilisateur avec le login : gestion
+[10-01-2024 16:37:32] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : gestion
+[10-01-2024 16:37:39] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : gestion
+[10-01-2024 16:38:34] [info] [IP: ::1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : gestion@gestion.com
+[10-01-2024 16:38:40] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[10-01-2024 16:38:40] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : gestion
+[10-01-2024 16:38:47] [info] [IP: ::1]: Mot de passe changé avec succès pour l'utilisateur avec le login : gestion
+[10-01-2024 16:38:47] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : gestion
+[10-01-2024 16:38:54] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[10-01-2024 16:38:54] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : gestion

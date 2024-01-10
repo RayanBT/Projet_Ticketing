@@ -74,6 +74,25 @@ input[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+.bouton-redirection:hover{
     background-color: #0056b3;
 }
+
+.bouton-redirection {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px;
+    background-color: #29648A;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+

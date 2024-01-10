@@ -40,5 +40,7 @@ if (!empty($_POST['sujet']) && !empty($_POST['description']) && !empty($_POST['p
 
     // Fermeture de la connexion à la base de données
     mysqli_close($connection);
+}else{
+    echo "Veuillez remplir tous les champs.";
 }
 ?>

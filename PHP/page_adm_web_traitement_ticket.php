@@ -23,6 +23,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link href="../CSS/style_user.css" rel="stylesheet">
     <link href="../CSS/style_page_adm_traitement_ticket.css" rel="stylesheet">
+    <link href="../CSS/style_volet_information.css" rel="stylesheet">
 </head>
 <body>
 <div class="page">
@@ -33,13 +34,13 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                 <a href="authentification.php"><i class="fa fa-home"></i> &nbsp; Accueil</a>
             </li>
             <li>
-                <a href="form_creation_ticket.php"><i class="fa fa-plus-circle"></i> &nbsp; Créer un ticket</a>
+                <a href="form_creation_technicien.php"><i class="fa fa-plus-circle"></i> &nbsp; Création compte technicien</a>
             </li>
             <li>
                 <a href="page_adm_web_traitement_ticket.php"><i class="fa fa-cogs"></i> &nbsp; Traitement ticket</a>
             </li>
             <li>
-                <a href="#hisorique-ticket"><i class="fa fa-ticket"></i> &nbsp; Historique de ticket</a>
+                <a href="page_adm_web.php#hisorique-ticket"><i class="fa fa-ticket"></i> &nbsp; Historique de ticket</a>
             </li>
             <li>
                 <a href="ChangePassword.php"><i class="fa fa-user"></i> &nbsp; Profil</a>
@@ -67,20 +68,21 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
 
 
             // Utilisation d'une requête SQL simple pour sélectionner les 10 derniers tickets
-            $query = "SELECT id_ticket, sujet, login, DATE_FORMAT(date_creation, '%d/%m/%Y') as date_creation, priorite, statut FROM $tab ORDER BY statut ASC";
+            $query = "SELECT id_ticket, sujet, login, DATE_FORMAT(date_creation, '%d/%m/%Y') as date_creation, priorite, statut, technicien FROM $tab ORDER BY statut ASC";
             $result = mysqli_query($connection, $query);
 
             if ($result) {
                 echo "<form method='post' action='action_update_ticket_adm_web.php'>";
-                echo "<table style='width: 400px; height: 400px'>";
+                echo "<table style='width: 100%; height: 400px; text-align: center'>";
                 echo "<tr>";
 
                 // Affiche les en-têtes de colonnes
-                echo "<th>Problème</th>";
+                echo "<th>Sujet</th>";
                 echo "<th>Créé par</th>";
                 echo "<th>Date de création</th>";
                 echo "<th>Niveau d'urgence</th>";
                 echo "<th>Statut</th>";
+                echo "<th>Assigné à</th>";
                 echo "</tr>";
 
                 // Affiche les données de chaque ligne
@@ -112,6 +114,23 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                     }
                     echo "</select>";
                     echo "</td>";
+
+                    echo "<td>";
+                    echo "<select name='assigne[]'>";
+                    // Ajoutez une option par défaut
+                    echo "<option value=''>Non assigné</option>";
+
+                    // Utilisez une fonction pour récupérer les utilisateurs techniciens
+                    $techniciens = getTechniciens($connection);
+
+                    foreach ($techniciens as $technicien) {
+                        $selectedAssignation = ($row['technicien'] == $technicien['login']) ? "selected" : "";
+                        echo "<option value='{$technicien['login']}' $selectedAssignation>{$technicien['login']}</option>";
+                    }
+
+                    echo "</select>";
+                    echo "</td>";
+
                     // Ajoutez un champ caché pour l'ID du ticket
                     echo "<input type='hidden' name='id_ticket[]' value='" . $row['id_ticket'] . "'>";
                     echo "</tr>";
@@ -123,11 +142,41 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
             } else {
                 echo "Erreur lors de la récupération des données de la base de données.";
             }
+
+
+            function getTechniciens($connection) {
+                $queryTechniciens = "SELECT login FROM user WHERE user_role = 'technicien'";
+                $resultTechniciens = mysqli_query($connection, $queryTechniciens);
+
+                $techniciens = array();
+                while ($rowTechnicien = mysqli_fetch_assoc($resultTechniciens)) {
+                    $techniciens[] = $rowTechnicien;
+                }
+
+                return $techniciens;
+            }
+
             ?>
 
             <br>
             <br>
         </main>
+
+        <script src="../JS/Script.js"></script>
+
+        <?php
+        if (isset($_SESSION['message'])) {
+            $message = ($_SESSION['message']);
+            $couleur = ($_SESSION['couleur']) ? "green" : "red";
+            // Appel de la fonction sans inclure à nouveau le script
+            echo "<script>afficherVolet('$message', '$couleur');</script>";
+            // Vider la session après utilisation
+            unset($_SESSION['couleur']);
+            unset($_SESSION['message']);
+        } else {
+            echo "<script>console.log('KO');</script>";
+        }
+        ?>
 
     </div>
 </div>

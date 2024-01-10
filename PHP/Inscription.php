@@ -2,11 +2,13 @@
 session_start();
 // Inclure le fichier de configuration des logs
 require_once('Config.php');
+require_once ('RC4.php');
 // Vérifie si le formulaire a été soumis
 if (isset($_POST["inscription"]) or isset($_POST["inscription_technicien"])) {
     $host = "localhost";
     $user = "root";
     $password = "";
+    $key_rc4 = "Groupe1";
     if (!empty($_POST['nom']) and !empty($_POST['login']) and !empty($_POST['email']) and !empty($_POST['mot_de_passe'])) {
         // Récupère la valeur de l'input nom et la stocke dans la variable $nom
         $nom = $_POST["nom"];
@@ -18,7 +20,8 @@ if (isset($_POST["inscription"]) or isset($_POST["inscription_technicien"])) {
         $email = $_POST["email"];
 
         // Récupère la valeur de l'input mot_de_passe et la stocke dans la variable $mot_de_passe
-        $mot_de_passe = $_POST["mot_de_passe"];
+        $mot_de_passe_chiffre = rc4_encrypt($_POST["mot_de_passe"], $key_rc4);
+
 
         /* connection serveur BD */
         $connection = mysqli_connect($host, $user, $password) or die("erreur");
@@ -57,10 +60,10 @@ if (isset($_POST["inscription"]) or isset($_POST["inscription_technicien"])) {
             exit();
         } else {
             if (isset($_POST["inscription_technicien"])){
-                $requete = "INSERT INTO `User` (`id_User`,`Nom`, `Login`, `Email`, `Mdp`, `user_role`) VALUES (NULL,?, ?, ?, MD5(?), 'technicien')";
+                $requete = "INSERT INTO `User` (`id_User`,`Nom`, `Login`, `Email`, `Mdp`, `user_role`) VALUES (NULL,?, ?, ?, ?, 'technicien')";
             } elseif (isset($_POST["inscription"])){
                 // Requête SQL correcte avec des marqueurs de paramètres
-                $requete = "INSERT INTO `User` (`id_User`,`Nom`, `Login`, `Email`, `Mdp`) VALUES (NULL,?, ?, ?, MD5(?))";
+                $requete = "INSERT INTO `User` (`id_User`,`Nom`, `Login`, `Email`, `Mdp`) VALUES (NULL,?, ?, ?, ?)";
             }
 
             // Préparation de la requête
@@ -69,7 +72,7 @@ if (isset($_POST["inscription"]) or isset($_POST["inscription_technicien"])) {
             if (!$reqprepare) {
                 die("Erreur de préparation de la requête : " . mysqli_error($connection));
             } else {
-                mysqli_stmt_bind_param($reqprepare, 'ssss', $nom, $login, $email, $mot_de_passe);
+                mysqli_stmt_bind_param($reqprepare, 'ssss', $nom, $login, $email, $mot_de_passe_chiffre);
 
                 // Exécution de la requête préparée
                 $result = mysqli_stmt_execute($reqprepare);

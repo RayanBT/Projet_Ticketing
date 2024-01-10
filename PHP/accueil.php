@@ -63,19 +63,20 @@
 
 
             // Utilisation d'une requête SQL simple pour sélectionner les 10 derniers tickets
-            $query = "SELECT sujet, login, DATE_FORMAT(date_creation, '%d/%m/%Y') as date_creation, priorite, statut FROM $tab ORDER BY id_ticket DESC LIMIT 10";
+            $query = "SELECT sujet, login, DATE_FORMAT(date_creation, '%d/%m/%Y') as date_creation, priorite, statut, technicien FROM $tab ORDER BY id_ticket DESC LIMIT 10";
             $result = mysqli_query($connection, $query);
 
             if ($result) {
-                echo "<table style='width: 400px; height: 400px'>";
+                echo "<table style='width: 100%; height: 400px; text-align: center'>";
             echo "<tr>";
 
             // Affiche les en-têtes de colonnes
             echo "<th>Problème</th>";
-            echo "<th>Technicien en charge</th>";
+            echo "<th>Crée par</th>";
             echo "<th>Date de création</th>";
             echo "<th>Niveau d'urgence</th>";
             echo "<th>Statut</th>";
+            echo "<th>Technicien en charge</th>";
             echo "</tr>";
 
             // Affiche les données de chaque ligne
@@ -83,9 +84,10 @@
             echo "<tr>";
             echo "<td>" . $row['sujet'] . "</td>";
             echo "<td>" . $row['login'] . "</td>";
-            echo "<td>". $row['date_creation'] ."</td>"; // Ajoutez la colonne 'date_creation' à votre table 'tickets'
+            echo "<td>". $row['date_creation'] ."</td>";
             echo "<td>" . $row['priorite'] . "</td>";
-            echo "<td>" . $row['statut'] . "</td>"; // Vous pouvez ajuster le statut en fonction de votre logique d'application
+            echo "<td>" . $row['statut'] . "</td>";
+            echo "<td>" . $row['technicien'] . "</td>";
             echo "</tr>";
             }
 
