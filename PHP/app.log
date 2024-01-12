@@ -482,3 +482,6 @@
 [12-01-2024 16:04:38] [error] [IP: ::1]: Tentative de connexion. Captcha incorrect. Veuillez réessayer.
 [12-01-2024 16:04:46] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
 [12-01-2024 16:04:46] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[12-01-2024 16:26:43] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[12-01-2024 16:30:50] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[12-01-2024 16:32:16] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
