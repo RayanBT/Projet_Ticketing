@@ -39,10 +39,13 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                 <a href="page_adm_web_traitement_ticket.php"><i class="fa fa-cogs"></i> &nbsp; Traitement ticket</a>
             </li>
             <li>
+                <a href="page_creation_libelle.php"><i class="fa fa-tag"></i> &nbsp; Gestion libellé</a>
+            </li>
+            <li>
                 <a href="#tickets-ouverts"><i class="fa fa-ticket"></i> &nbsp; Tickets Ouverts</a>
             </li>
             <li>
-                <a href="ChangePassword.php"><i class="fa fa-user"></i> &nbsp; Profil</a>
+                <a href="profil.php"><i class="fa fa-user"></i> &nbsp; Profil</a>
             </li>
             <li>
                 <a href="../PHP/Deconnexion.php" class="bouton"><i class="fa fa-sign-out"></i> Déconnexion</a>
@@ -60,7 +63,10 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
 
             // Utilisation d'une requête préparée pour éviter les injections SQL
             $login = $_SESSION['login'];
-            $query = "SELECT id_ticket as Id, login as Login, sujet as Sujet, priorite as Priorité, DATE_FORMAT(date_creation, '%d/%m/%Y') as 'Date création', Statut, Technicien FROM $table WHERE statut!=? and technicien='Personne'";
+            $query = "SELECT t.id_ticket as Id, t.Login as login, lt.libelle as Libelle, t.priorite as Priorité, DATE_FORMAT(t.date_creation, '%d/%m/%Y') as 'date_creation', t.statut as Statut , t.technicien as Technicien
+                    FROM $table t
+                    LEFT JOIN libelle_ticket lt ON t.id_libelle = lt.id_libelle
+                    WHERE t.statut!=? and technicien='Personne'";
             $stmt = mysqli_prepare($connection, $query);
             $statut = "fermé";
             if ($stmt) {
@@ -121,7 +127,10 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                     $technicienLogin = $rowTechnicien['login'];
 
                     // Requête pour obtenir les tickets attribués à un technicien spécifique
-                    $queryTicketsTechnicien = "SELECT id_ticket as Id, login as Login, sujet as Sujet, priorite as Priorité, DATE_FORMAT(date_creation, '%d/%m/%Y') as 'Date création', Statut FROM $table WHERE technicien = ?";
+                    $queryTicketsTechnicien = "SELECT t.id_ticket as Id, t.Login as login, lt.libelle as Libelle, t.priorite as Priorité, DATE_FORMAT(t.date_creation, '%d/%m/%Y') as 'date_creation', t.statut as Statut
+                    FROM $table t
+                    LEFT JOIN libelle_ticket lt ON t.id_libelle = lt.id_libelle
+                    WHERE technicien = ?";
                     $stmtTicketsTechnicien = mysqli_prepare($connection, $queryTicketsTechnicien);
 
                     if ($stmtTicketsTechnicien) {

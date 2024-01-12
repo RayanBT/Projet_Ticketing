@@ -1,0 +1,20 @@
+a.arrow-link {
+    font-size: 24px;
+    text-decoration: none;
+    color: #333; /* Couleur du texte */
+    margin: 0 5px; /* Marge autour des liens */
+}
+
+/* Style pour les flèches gauche et droite */
+a.arrow-link.left {
+    transform: rotate(180deg); /* Rotation de la flèche vers la gauche */
+}
+
+a.arrow-link.right {
+    /* Aucune transformation nécessaire pour la flèche vers la droite */
+}
+
+/* Changez la couleur lorsque survolé */
+a.arrow-link:hover {
+    color: #555; /* Couleur du texte lors du survol */
+}

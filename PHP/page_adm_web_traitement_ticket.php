@@ -43,7 +43,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                 <a href="page_adm_web.php#hisorique-ticket"><i class="fa fa-ticket"></i> &nbsp; Historique de ticket</a>
             </li>
             <li>
-                <a href="ChangePassword.php"><i class="fa fa-user"></i> &nbsp; Profil</a>
+                <a href="profil.php"><i class="fa fa-user"></i> &nbsp; Profil</a>
             </li>
             <li>
                 <a href="../PHP/Deconnexion.php" class="bouton"><i class="fa fa-sign-out"></i> Déconnexion</a>
@@ -55,7 +55,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
             <h3 class="phrase_acceuil">Page traitement ticket</h3>
             <br>
             <br>
-            <h3 id="hisorique-ticket"> Ticket ouvert :</h3>
+            <h3 id="hisorique-ticket"> Tickets:</h3>
             <br>
             <?php
             $host = "localhost";
@@ -67,8 +67,11 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
             $tab = "tickets";
 
 
-            // Utilisation d'une requête SQL simple pour sélectionner les 10 derniers tickets
-            $query = "SELECT id_ticket, sujet, login, DATE_FORMAT(date_creation, '%d/%m/%Y') as date_creation, priorite, statut, technicien FROM $tab ORDER BY statut ASC";
+            $query = "SELECT t.id_ticket as Id, t.Login as login, lt.libelle as Libelle, t.priorite as Priorité, DATE_FORMAT(t.date_creation, '%d/%m/%Y') as 'date_creation', t.statut as Statut, t.technicien as Technicien 
+                    FROM $table t
+                    LEFT JOIN libelle_ticket lt ON t.id_libelle = lt.id_libelle
+                    ORDER BY statut ASC";
+            //$query = "SELECT id_ticket, sujet, login, DATE_FORMAT(date_creation, '%d/%m/%Y') as date_creation, priorite, statut, technicien FROM $tab ORDER BY statut ASC";
             $result = mysqli_query($connection, $query);
 
             if ($result) {
@@ -77,7 +80,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                 echo "<tr>";
 
                 // Affiche les en-têtes de colonnes
-                echo "<th>Sujet</th>";
+                echo "<th>Libellé</th>";
                 echo "<th>Créé par</th>";
                 echo "<th>Date de création</th>";
                 echo "<th>Niveau d'urgence</th>";
@@ -88,7 +91,27 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                 // Affiche les données de chaque ligne
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>";
-                    echo "<td>" . $row['sujet'] . "</td>";
+
+                    //Partie pour afficher le libelle
+                    $queryLibelles = "SELECT id_libelle, libelle FROM libelle_ticket";
+                    $resultLibelles = mysqli_query($connection, $queryLibelles);
+
+                    if ($resultLibelles) {
+                        $libelles = array();
+                        while ($rowLibelle = mysqli_fetch_assoc($resultLibelles)) {
+                            $libelles[] = $rowLibelle;
+                        }
+                    } else {
+                        echo "Erreur lors de la récupération des libellés de la base de données.";
+                    }
+                    echo "<td>";
+                    echo "<select name='libelle[]'>";
+                    foreach ($libelles as $libelle) {
+                        $selectedLibelle = ($row['Libelle'] == $libelle['libelle']) ? "selected" : "";
+                        echo "<option value='{$libelle['id_libelle']}' $selectedLibelle>{$libelle['libelle']}</option>";
+                    }
+                    echo "</select>";
+                    echo "</td>";
                     echo "<td>" . $row['login'] . "</td>";
                     echo "<td>". $row['date_creation'] ."</td>"; // Ajoutez la colonne 'date_creation' à votre table 'tickets'
                     echo "<td>";
@@ -96,7 +119,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                     $enumValuesPriorite = array("Faible", "Moyen", "Important", "Urgent");
                     // Affiche chaque valeur dans le menu déroulant
                     foreach ($enumValuesPriorite as $value) {
-                        $selectedPriorite = ($row['priorite'] == $value) ? "selected" : "";
+                        $selectedPriorite = ($row['Priorité'] == $value) ? "selected" : "";
                         echo "<option value='$value' $selectedPriorite>$value</option>";
                     }
                     echo "</select>";
@@ -109,7 +132,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
 
                     // Affiche chaque valeur dans le menu déroulant
                     foreach ($enumValues as $value) {
-                        $selected = ($row['statut'] == $value) ? "selected" : "";
+                        $selected = ($row['Statut'] == $value) ? "selected" : "";
                         echo "<option value='$value' $selected>$value</option>";
                     }
                     echo "</select>";
@@ -118,13 +141,13 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                     echo "<td>";
                     echo "<select name='assigne[]'>";
                     // Ajoutez une option par défaut
-                    echo "<option value=''>Non assigné</option>";
+                    echo "<option value='Personne'>Non assigné</option>";
 
                     // Utilisez une fonction pour récupérer les utilisateurs techniciens
                     $techniciens = getTechniciens($connection);
 
                     foreach ($techniciens as $technicien) {
-                        $selectedAssignation = ($row['technicien'] == $technicien['login']) ? "selected" : "";
+                        $selectedAssignation = ($row['Technicien'] == $technicien['login']) ? "selected" : "";
                         echo "<option value='{$technicien['login']}' $selectedAssignation>{$technicien['login']}</option>";
                     }
 
@@ -132,7 +155,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                     echo "</td>";
 
                     // Ajoutez un champ caché pour l'ID du ticket
-                    echo "<input type='hidden' name='id_ticket[]' value='" . $row['id_ticket'] . "'>";
+                    echo "<input type='hidden' name='id_ticket[]' value='" . $row['Id'] . "'>";
                     echo "</tr>";
                 }
 

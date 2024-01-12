@@ -1,5 +1,15 @@
 <?php
 session_start();
+
+// Générer deux chiffres aléatoires entre 1 et 10
+$nombre1 = rand(1, 10);
+$nombre2 = rand(1, 10);
+
+// Calculer la somme
+$somme = $nombre1 + $nombre2;
+
+// Stocker la somme dans la session
+$_SESSION['captcha'] = $somme;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +45,8 @@ session_start();
                     <input type="text" id="login_connexion" placeholder="Login" name="login_connexion">
                     <label for="password_connexion">Mot de passe :</label>
                     <input type="password" id="password_connexion" placeholder="Mot de passe" name="mot_de_passe">
+                    <label for="captcha"> Vérification (calculez <?php echo $nombre1; ?> + <?php echo $nombre2; ?>) :</label>
+                    <input type="text" id="captcha" placeholder="Résultat" name="captcha">
                     <a href="ChangePassword.php">mot de passe oublié ?</a> <!--Rediriger vers le formulaire php pour changer de mot de passe-->
                     <button type="submit" name="connexion">Connexion</button>
                 </form>

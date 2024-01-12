@@ -1,0 +1,14 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+.description-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}

@@ -1,3 +1,22 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$host = "localhost";
+$user = "root";
+$password = "";
+$connection = mysqli_connect($host, $user, $password) or die("Erreur de connexion à la base de données");
+$namedb = "BD_Ticketing";
+$db = mysqli_select_db($connection, $namedb) or die("Erreur de sélection de la base de données");
+$tab = "tickets";
+
+$query = "SELECT t.id_ticket as Id, t.Login as login, lt.libelle as Libelle, t.priorite as Priorité, DATE_FORMAT(t.date_creation, '%d/%m/%Y') as 'date_creation', t.statut as Statut , t.technicien as Technicien
+            FROM $tab t
+            LEFT JOIN libelle_ticket lt ON t.id_libelle = lt.id_libelle
+            ORDER BY id_ticket DESC LIMIT 10";
+
+$result = mysqli_query($connection, $query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,51 +70,47 @@
             <br>
 
             <?php
-            error_reporting(E_ALL);
-            ini_set('display_errors', 1);
-            $host = "localhost";
-            $user = "root";
-            $password = "";
-            $connection = mysqli_connect($host, $user, $password) or die("Erreur de connexion à la base de données");
-            $namedb = "BD_Ticketing";
-            $db = mysqli_select_db($connection, $namedb) or die("Erreur de sélection de la base de données");
-            $tab = "tickets";
-
-
-            // Utilisation d'une requête SQL simple pour sélectionner les 10 derniers tickets
-            $query = "SELECT sujet, login, DATE_FORMAT(date_creation, '%d/%m/%Y') as date_creation, priorite, statut, technicien FROM $tab ORDER BY id_ticket DESC LIMIT 10";
-            $result = mysqli_query($connection, $query);
-
-            if ($result) {
-                echo "<table style='width: 100%; height: 400px; text-align: center'>";
-            echo "<tr>";
-
+            echo "<table style='width: 100%; height: 400px; text-align: center'>";
             // Affiche les en-têtes de colonnes
-            echo "<th>Problème</th>";
-            echo "<th>Crée par</th>";
-            echo "<th>Date de création</th>";
-            echo "<th>Niveau d'urgence</th>";
-            echo "<th>Statut</th>";
-            echo "<th>Technicien en charge</th>";
-            echo "</tr>";
-
-            // Affiche les données de chaque ligne
-            while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
-            echo "<td>" . $row['sujet'] . "</td>";
-            echo "<td>" . $row['login'] . "</td>";
-            echo "<td>". $row['date_creation'] ."</td>";
-            echo "<td>" . $row['priorite'] . "</td>";
-            echo "<td>" . $row['statut'] . "</td>";
-            echo "<td>" . $row['technicien'] . "</td>";
-            echo "</tr>";
-            }
 
-            echo "</table>";
+            if ($result && mysqli_num_rows($result) > 0) {
+                echo "<th>Problème</th>";
+                echo "<th>Crée par</th>";
+                echo "<th>Date de création</th>";
+                echo "<th>Niveau d'urgence</th>";
+                echo "<th>Statut</th>";
+                echo "<th>Technicien en charge</th>";
+                echo "</tr>";
+
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    echo "<td>" . $row['Libelle'] . "</td>";
+                    echo "<td>" . $row['login'] . "</td>";
+                    echo "<td>". $row['date_creation'] ."</td>";
+                    echo "<td>" . $row['Priorité'] . "</td>";
+                    echo "<td>" . $row['Statut'] . "</td>";
+                    echo "<td>" . $row['Technicien'] . "</td>";
+                    echo "</tr>";
+                }
             } else {
-            echo "Erreur lors de la récupération des données de la base de données.";
-            }
+                // Affiche les en-têtes de colonnes même si aucun résultat n'est retourné
+                echo "<th>Libellé</th>";
+                echo "<th>Crée par</th>";
+                echo "<th>Date de création</th>";
+                echo "<th>Niveau d'urgence</th>";
+                echo "<th>Statut</th>";
+                echo "<th>Technicien en charge</th>";
+                echo "</tr>";
 
+                // Génère des lignes vides
+                for ($i = 0; $i < 5; $i++) {
+                    echo "<tr>";
+                    echo "<td></td><td></td><td></td><td></td><td></td><td></td>";
+                    echo "</tr>";
+                }
+            }
+            echo "</table>";
             ?>
 
             <br>

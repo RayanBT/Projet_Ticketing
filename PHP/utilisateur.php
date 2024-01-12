@@ -41,7 +41,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                 <a href="#hisorique-ticket"><i class="fa fa-ticket"></i> &nbsp; Historique de ticket</a>
             </li>
             <li>
-                <a href="ChangePassword.php"><i class="fa fa-user"></i> &nbsp; Profil</a>
+                <a href="profil.php"><i class="fa fa-user"></i> &nbsp; Profil</a>
             </li>
             <li>
                 <a href="../PHP/Deconnexion.php" class="bouton"><i class="fa fa-sign-out"></i> Déconnexion</a>
@@ -59,7 +59,10 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
 
             // Utilisation d'une requête préparée pour éviter les injections SQL
             $login = $_SESSION['login'];
-            $query = "SELECT id_ticket as Id, Login, Sujet, priorite as Priorité, DATE_FORMAT(date_creation, '%d/%m/%Y') as 'Date création', statut as Statut FROM $table WHERE login=?";
+            $query = "SELECT t.id_ticket as Id, t.Login, lt.libelle as Libelle, t.priorite as Priorité, DATE_FORMAT(t.date_creation, '%d/%m/%Y') as 'Date création', t.statut as Statut 
+          FROM $table t
+          LEFT JOIN libelle_ticket lt ON t.id_libelle = lt.id_libelle
+          WHERE t.login=?";
             $stmt = mysqli_prepare($connection, $query);
 
             if ($stmt) {
@@ -67,12 +70,16 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
 
-                if ($result) {
-                    echo "<table style='width: 400px; height: 400px'>";
-                    echo "<tr>";
+                echo "<table style='width: 100%; height: 400px; text-align: center'>";
+
+// Affiche les en-têtes de colonnes
+                echo "<tr>";
+
+                if ($result && mysqli_num_rows($result) > 0) {
+                    $headerPrinted = false;
                     while ($row = mysqli_fetch_assoc($result)) {
                         // Affiche les en-têtes de colonnes une seule fois
-                        if (empty($headerPrinted)) {
+                        if (!$headerPrinted) {
                             foreach ($row as $key => $value) {
                                 echo "<th>$key</th>";
                             }
@@ -89,8 +96,25 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                     }
                     echo "</table>";
                 } else {
-                    echo "Erreur lors de la récupération des données de la base de données.";
+                    // Affiche les en-têtes de colonnes même si aucun résultat n'est retourné
+                    echo "<th>Id</th>";
+                    echo "<th>Crée par</th>";
+                    echo "<th>Sujet</th>";
+                    echo "<th>Niveau d'urgence</th>";
+                    echo "<th>Date de création</th>";
+                    echo "<th>Statut</th>";
+                    echo "<th>Technicien en charge</th>";
+                    echo "</tr>";
+
+                    // Génère des lignes vides
+                    for ($i = 0; $i < 5; $i++) {
+                        echo "<tr>";
+                        echo "<td></td><td></td><td></td><td></td><td></td><td></td><td></td>";
+                        echo "</tr>";
+                    }
+                    echo "</table>";
                 }
+
             } else {
                 echo "Erreur lors de la préparation de la requête.";
             }

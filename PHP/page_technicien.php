@@ -40,7 +40,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                 <a href="#tickets-attribues"><i class="fa fa-ticket"></i> &nbsp; Tickets attribués</a>
             </li>
             <li>
-                <a href="ChangePassword.php"><i class="fa fa-user"></i> &nbsp; Profil</a>
+                <a href="profil.php"><i class="fa fa-user"></i> &nbsp; Profil</a>
             </li>
             <li>
                 <a href="../PHP/Deconnexion.php" class="bouton"><i class="fa fa-sign-out"></i> Déconnexion</a>
@@ -58,7 +58,10 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
 
             // Utilisation d'une requête préparée pour éviter les injections SQL
             $login = $_SESSION['login'];
-            $query = "SELECT id_ticket as Id, Login, Sujet, priorite as Priorité, DATE_FORMAT(date_creation, '%d/%m/%Y') as 'Date création', statut as Statut, Technicien FROM $table WHERE statut=?";
+            $query = "SELECT t.id_ticket as Id, t.Login as login, lt.libelle as Libelle, t.priorite as Priorité, DATE_FORMAT(t.date_creation, '%d/%m/%Y') as 'date_creation', t.statut as Statut , t.technicien as Technicien
+                    FROM $table t
+                    LEFT JOIN libelle_ticket lt ON t.id_libelle = lt.id_libelle
+                    WHERE t.statut=? or t.technicien='Personne'";
             $stmt = mysqli_prepare($connection, $query);
             $Statut = "Ouvert";
             if ($stmt) {
@@ -83,7 +86,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                         foreach ($row as $value) {
                             echo "<td>$value</td>";
                         }
-                        echo "<td><input type='checkbox' name='tickets[]' value='{$row['Id']}'></td>";
+                        echo "<td><input type='checkbox' name='tickets[]' value='{$row['Id']}' class='styled-checkbox'></td>";
                         echo "</tr>";
                     } while ($row = mysqli_fetch_assoc($result));
                 } else {
@@ -123,7 +126,10 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
 
             // Utilisation d'une requête préparée pour éviter les injections SQL
             $login = $_SESSION['login'];
-            $query = "SELECT id_ticket as Id, Login as 'Crée par', Sujet, priorite as 'Niveau urgence', DATE_FORMAT(date_creation, '%d/%m/%Y') as 'Date création', statut as Statut, Technicien FROM $table WHERE technicien=?";
+            $query = "SELECT t.id_ticket as Id, t.Login as 'Crée par', lt.libelle as Libelle, t.priorite as 'Niveau urgence', DATE_FORMAT(t.date_creation, '%d/%m/%Y') as 'date_creation', t.statut as Statut , t.technicien as Technicien
+                    FROM $table t
+                    LEFT JOIN libelle_ticket lt ON t.id_libelle = lt.id_libelle
+                    WHERE technicien=?";
             $stmt = mysqli_prepare($connection, $query);
             if ($stmt) {
                 mysqli_stmt_bind_param($stmt, "s", $login);

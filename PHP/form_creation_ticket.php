@@ -18,8 +18,24 @@ if (!isset($_SESSION['login'])) {
 <div class="container">
     <h1>Créé votre ticket</h1>
     <form action="action_creation_ticket.php" method="POST">
-        <label for="sujet">Sujet :</label>
-        <input type="text" id="sujet" name="sujet" required><br><br>
+        <label for="libelle">Libellé :</label>
+        <select id="libelle" name="libelle">
+            <?php
+            $host = "localhost";
+            $user = "root";
+            $password = "";
+            $database = "BD_Ticketing";
+            $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur de connexion à la base de données");
+
+            // Assumez que $connection est votre connexion à la base de données
+            $queryLibelles = "SELECT id_libelle, libelle FROM libelle_ticket";
+            $resultLibelles = mysqli_query($connection, $queryLibelles);
+
+            while ($rowLibelle = mysqli_fetch_assoc($resultLibelles)) {
+                echo "<option value='{$rowLibelle['id_libelle']}'>{$rowLibelle['libelle']}</option>";
+            }
+            ?>
+        </select><br><br>
 
         <label for="description">Description :</label><br>
         <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
