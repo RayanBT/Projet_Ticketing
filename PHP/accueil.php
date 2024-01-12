@@ -26,6 +26,7 @@ $result = mysqli_query($connection, $query);
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link href="../CSS/style_seconde_proposition.css" rel="stylesheet">
     <link href="../CSS/style_volet_information.css" rel="stylesheet">
+    <link href="../CSS/style_tableau.css" rel="stylesheet">
 </head>
 <body>
 <div class="page">

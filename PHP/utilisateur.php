@@ -25,6 +25,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link href="../CSS/style_user.css" rel="stylesheet">
     <link href="../CSS/style_volet_information.css" rel="stylesheet">
+    <link href="../CSS/style_tableau.css" rel="stylesheet">
 </head>
 <body>
 <div class="page">

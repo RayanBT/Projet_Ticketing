@@ -145,7 +145,7 @@ th, td{
     -moz-appearance: none;
     width: 20px;
     height: 20px;
-    border: 2px solid #4CAF50;
+    border: 2px solid black;
     border-radius: 4px;
     outline: none;
     cursor: pointer;
@@ -155,7 +155,7 @@ th, td{
 .styled-checkbox:checked::before {
     content: '\2713';
     font-size: 16px;
-    color: #4CAF50;
+    color: black;
     position: absolute;
     top: 50%;
     left: 50%;

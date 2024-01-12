@@ -211,6 +211,13 @@
 [10-01-2024 16:38:47] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : gestion
 [10-01-2024 16:38:54] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
 [10-01-2024 16:38:54] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : gestion
+[12-01-2024 16:16:09] [error] [IP: 127.0.0.1]: Tentative de connexion échouée pour l'utilisateur avec le login : armand
+[12-01-2024 16:16:26] [error] [IP: 127.0.0.1]: Tentative de connexion échouée pour l'utilisateur avec le login : armand
+[12-01-2024 16:16:49] [info] [IP: 127.0.0.1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : a@gm.com
+[12-01-2024 16:16:53] [info] [IP: 127.0.0.1]: Connexion réussie pour l'utilisateur avec le login : css
+[12-01-2024 16:16:53] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : css
+[12-01-2024 16:17:01] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : css
+[12-01-2024 16:17:14] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : css
 [11-01-2024 20:41:23] [error] [IP: ::1]: ID du ticket non spécifié.
 [11-01-2024 20:41:59] [info] [IP: ::1]: Le ticket a été clôturé avec succès.
 [11-01-2024 20:41:59] [info] [IP: ::1]: Redirection vers la page_technicien pour l'user avec le login : tech1
@@ -488,3 +495,30 @@
 [12-01-2024 16:35:05] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
 [12-01-2024 16:41:01] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
 [12-01-2024 16:41:04] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[12-01-2024 16:42:57] [info] [IP: 127.0.0.1]: Connexion réussie pour l'utilisateur avec le login : rayan
+[12-01-2024 16:42:57] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : rayan
+[12-01-2024 16:45:28] [info] [IP: 127.0.0.1]: Connexion réussie pour l'utilisateur avec le login : tech1
+[12-01-2024 16:45:28] [info] [IP: 127.0.0.1]: Redirection vers la page_technicien pour l'user avec le login : tech1
+[12-01-2024 16:45:49] [info] [IP: 127.0.0.1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[12-01-2024 16:45:49] [info] [IP: 127.0.0.1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[12-01-2024 16:46:12] [info] [IP: 127.0.0.1]: Les statuts ont été mis à jour avec succès.
+[12-01-2024 16:46:12] [info] [IP: 127.0.0.1]: Les priorités ont été mis à jour avec succès.
+[12-01-2024 16:46:12] [info] [IP: 127.0.0.1]: Les techniciens ont été mis à jour avec succès.
+[12-01-2024 16:46:12] [info] [IP: 127.0.0.1]: Les libellés ont été mis à jour avec succès.
+[12-01-2024 16:46:12] [info] [IP: 127.0.0.1]: Les tickets ont été mis à jour avec succès.
+[12-01-2024 16:46:13] [info] [IP: 127.0.0.1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[12-01-2024 16:46:36] [error] [IP: 127.0.0.1]: Tentative de connexion échouée pour l'utilisateur avec le login : admin
+[12-01-2024 16:46:46] [info] [IP: 127.0.0.1]: Connexion réussie pour l'utilisateur avec le login : admin
+[12-01-2024 16:46:46] [info] [IP: 127.0.0.1]: Redirection vers la page_admin_systeme pour l'user avec le login : admin
+[12-01-2024 16:47:12] [info] [IP: 127.0.0.1]: Redirection vers la page_admin_systeme pour l'user avec le login : admin
+[12-01-2024 16:47:15] [info] [IP: 127.0.0.1]: Redirection vers la page_admin_systeme pour l'user avec le login : admin
+[12-01-2024 16:47:16] [info] [IP: 127.0.0.1]: Redirection vers la page_admin_systeme pour l'user avec le login : admin
+[12-01-2024 16:48:03] [info] [IP: 127.0.0.1]: Connexion réussie pour l'utilisateur avec le login : tech1
+[12-01-2024 16:48:03] [info] [IP: 127.0.0.1]: Redirection vers la page_technicien pour l'user avec le login : tech1
+[12-01-2024 16:48:23] [info] [IP: 127.0.0.1]: Connexion réussie pour l'utilisateur avec le login : rayan
+[12-01-2024 16:48:23] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : rayan
+[12-01-2024 16:48:28] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : rayan
+[12-01-2024 16:48:41] [info] [IP: 127.0.0.1]: Connexion réussie pour l'utilisateur avec le login : tech1
+[12-01-2024 16:48:41] [info] [IP: 127.0.0.1]: Redirection vers la page_technicien pour l'user avec le login : tech1
+[12-01-2024 16:49:18] [info] [IP: 127.0.0.1]: Connexion réussie pour l'utilisateur avec le login : tech1
+[12-01-2024 16:49:18] [info] [IP: 127.0.0.1]: Redirection vers la page_technicien pour l'user avec le login : tech1

@@ -1,0 +1,26 @@
+/* Style pour le tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px; /* Bords arrondis */
+    overflow: hidden; /* Pour éviter que les coins arrondis ne soient coupés */
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Style pour l'en-tête du tableau */
+th {
+    background: linear-gradient(to bottom, #3e7ca6, #5AB9EA); /* Dégradé linéaire pour la couleur de fond de thead */
+}
+
+/* Style pour les lignes paires du tableau */
+tbody tr{
+    background-color: #80bee7; /* Couleur de fond pour les lignes paires */
+}
+
+
+/* Style pour les cellules du tableau */
+td, th {
+    padding: 12px;
+    border: 1px solid #ddd; /* Bordures */
+}
+

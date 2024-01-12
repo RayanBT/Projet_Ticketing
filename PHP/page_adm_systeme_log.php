@@ -17,6 +17,7 @@ if (!isset($_SESSION['login']) and $_SESSION['user_role'] != "admin_systeme") {
     <link href="../CSS/style_user.css" rel="stylesheet">
     <link href="../CSS/style_volet_information.css" rel="stylesheet">
     <link href="../CSS/style_page_adm_systeme.css" rel="stylesheet">
+    <link href="../CSS/style_tableau.css" rel="stylesheet">
 </head>
 <body>
 <div class="page">
