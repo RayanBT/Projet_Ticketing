@@ -1,4 +1,4 @@
-<?php
+    <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -59,7 +59,14 @@ $result = mysqli_query($connection, $query);
         <main>
             <h3 id="presentation">Qu'est ce que le ticketing ?</h3>
             <br>
-            <p class="ticketing">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at ullamcorper nisl. Suspendisse accumsan mattis est vitae elementum. Fusce non erat quis odio aliquam pellentesque. Sed et quam id nisl laoreet luctus ac non augue. Nunc ut feugiat lectus. Morbi hendrerit eleifend velit eget tempor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In et magna risus.</p>
+            <p class="ticketing">
+                Le ticketing est un processus qui englobe la création et la résolution de tickets
+                par un personnel compétent. Un ticket est une demande de dépannage soumise en cas de problème,
+                en particulier dans les salles machines de l'IUT. Ces tickets sont classés en fonction de
+                leur niveau d'urgence, puis pris en charge par des techniciens qui sont responsables de les résoudre.
+                Ainsi, le ticketing facilite la gestion efficace des problèmes en assurant une priorisation appropriée
+                des demandes et en garantissant qu'elles sont traitées par des professionnels qualifiés.
+            </p>
             <br>
             <br>
             <h3 id="video_explicative">Vidéo explicative</h3>
@@ -138,11 +145,20 @@ $result = mysqli_query($connection, $query);
         <footer id="about">
             <div class="card">
                 <h4>A propos</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at ullamcorper nisl.</p>
+                <p>
+                    Rayan's Corp est un groupe d'étudiants en informatique en BUT2 à l'IUT de Vélizy
+                    composé de BEN TANFOUS Rayan, CLOUZEAU Armand, BADER Sarah, PESENTI Aymeric et AKBOULATOV Ismail
+                </p>
             </div>
             <div class="card">
                 <h4>Pour nous contacter</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at ullamcorper nisl.</p>
+                <ul>
+                    <li>btrayan21@gmail.com</li>
+                    <li>ismail.akboulatov@gmail.com</li>
+                    <li>armand.clouzeau@gmail.com</li>
+                    <li>sarah.bader.f@gmail.com</li>
+                    <li>aymeric.pesenti@gmail.com</li>
+                </ul>
             </div>
 
         </footer>

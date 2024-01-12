@@ -211,6 +211,16 @@
 [10-01-2024 16:38:47] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : gestion
 [10-01-2024 16:38:54] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
 [10-01-2024 16:38:54] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : gestion
+[12-01-2024 16:27:50] [info] [IP: 127.0.0.1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : isma@mail.com
+[12-01-2024 16:28:08] [info] [IP: 127.0.0.1]: Connexion réussie pour l'utilisateur avec le login : Isma
+[12-01-2024 16:28:08] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : Isma
+[12-01-2024 16:30:31] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : Isma
+[12-01-2024 16:30:40] [info] [IP: 127.0.0.1]: Mot de passe changé avec succès pour l'utilisateur avec le login : Isma
+[12-01-2024 16:30:40] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : Isma
+[12-01-2024 16:30:55] [error] [IP: 127.0.0.1]: Mot de passe actuel incorrect pour l'utilisateur avec le login : Isma
+[12-01-2024 16:30:58] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : Isma
+[12-01-2024 16:31:00] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : Isma
+[12-01-2024 16:31:18] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : Isma
 [11-01-2024 20:41:23] [error] [IP: ::1]: ID du ticket non spécifié.
 [11-01-2024 20:41:59] [info] [IP: ::1]: Le ticket a été clôturé avec succès.
 [11-01-2024 20:41:59] [info] [IP: ::1]: Redirection vers la page_technicien pour l'user avec le login : tech1
@@ -488,3 +498,7 @@
 [12-01-2024 16:35:05] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
 [12-01-2024 16:41:01] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
 [12-01-2024 16:41:04] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[12-01-2024 16:51:45] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : Isma
+[12-01-2024 16:51:53] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : Isma
+[12-01-2024 16:51:59] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : Isma
+[12-01-2024 16:52:04] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : Isma
