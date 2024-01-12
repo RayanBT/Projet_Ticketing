@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mer. 10 jan. 2024 à 13:48
+-- Généré le : ven. 12 jan. 2024 à 16:18
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `BD_Ticketing`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `libelle_ticket`
+--
+
+CREATE TABLE `libelle_ticket` (
+  `id_libelle` int(11) NOT NULL,
+  `libelle` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `libelle_ticket`
+--
+
+INSERT INTO `libelle_ticket` (`id_libelle`, `libelle`) VALUES
+(9, 'Demande d\'assistance pour la configuration'),
+(7, 'Problème avec un périphérique externe'),
+(3, 'Problème d\'accès à un logiciel'),
+(4, 'Problème d\'impression'),
+(1, 'Problème de connexion réseau'),
+(6, 'Problème de matériel'),
+(5, 'Problème de messagerie électronique'),
+(8, 'Problème de stockage');
 
 -- --------------------------------------------------------
 
@@ -43,19 +68,50 @@ CREATE TABLE `log` (
 CREATE TABLE `tickets` (
   `id_ticket` int(11) NOT NULL,
   `login` varchar(32) NOT NULL,
-  `sujet` text NOT NULL,
-  `description` varchar(50) NOT NULL,
+  `id_libelle` int(11) NOT NULL,
+  `description` text NOT NULL,
   `priorite` enum('Faible','Moyen','Important','Urgent') NOT NULL,
   `date_creation` date NOT NULL,
-  `statut` enum('Ouvert','En cours','Fermé') NOT NULL DEFAULT 'Ouvert'
+  `statut` enum('Ouvert','En cours','Fermé') NOT NULL DEFAULT 'Ouvert',
+  `technicien` varchar(32) NOT NULL DEFAULT 'Personne'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `tickets`
 --
 
-INSERT INTO `tickets` (`id_ticket`, `login`, `sujet`, `description`, `priorite`, `date_creation`, `statut`) VALUES
-(24, 'gestion', 'test', 'voila le pb', 'Urgent', '2024-01-09', 'En cours');
+INSERT INTO `tickets` (`id_ticket`, `login`, `id_libelle`, `description`, `priorite`, `date_creation`, `statut`, `technicien`) VALUES
+(40, 'rayan', 9, 'sfgsgffg', 'Important', '2024-01-12', 'Ouvert', 'Personne');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tickets_close`
+--
+
+CREATE TABLE `tickets_close` (
+  `id_ticket` int(11) NOT NULL,
+  `login` varchar(32) NOT NULL,
+  `id_libelle` int(11) NOT NULL,
+  `description` text NOT NULL,
+  `priorite` enum('Faible','Moyen','Important','Urgent') NOT NULL,
+  `date_creation` date NOT NULL,
+  `date_fermeture` date NOT NULL DEFAULT current_timestamp(),
+  `statut` enum('Ouvert','En cours','Fermé') NOT NULL,
+  `technicien` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `tickets_close`
+--
+
+INSERT INTO `tickets_close` (`id_ticket`, `login`, `id_libelle`, `description`, `priorite`, `date_creation`, `date_fermeture`, `statut`, `technicien`) VALUES
+(33, 'rayan', 9, 'test', 'Faible', '2024-01-11', '2024-01-11', 'Fermé', 'tech1'),
+(34, 'rayan', 4, 'toita', 'Faible', '2024-01-11', '2024-01-11', 'Fermé', 'tech1'),
+(35, 'rayan', 9, 'sdfdf\r\n\r\n', 'Faible', '2024-01-11', '2024-01-11', 'Fermé', 'tech1'),
+(36, 'rayan', 4, 'qfqfqf', 'Important', '2024-01-11', '2024-01-12', 'Fermé', 'tech2'),
+(37, 'rayan', 8, 'blablabla', 'Important', '2024-01-12', '2024-01-12', 'Fermé', 'tech1'),
+(39, 'rayan', 9, 'zfaf', 'Faible', '2024-01-12', '2024-01-12', 'Fermé', 'tech1');
 
 -- --------------------------------------------------------
 
@@ -77,14 +133,24 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nom`, `login`, `email`, `mdp`, `user_role`) VALUES
-(1, 'Armand', 'armand', 'armand.clouzeau@gmail.com', '098f6bcd4621d373cade4e832627b4f6', 'utilisateur'),
-(3, 'Rayan', 'Rayan', 'rayan@gmail.com', 'e9e370c220d689a6fdff0eb557c406f3', 'utilisateur'),
-(4, 'tutu', 'tutu', 'tutu@gmail.com', 'bdb8c008fa551ba75f8481963f2201da', 'utilisateur'),
-(5, 'Admin_web', 'gestion', 'admweb@gmail.com', 'ab4f63f9ac65152575886860dde480a1', 'admin_web');
+(9, 'ryry', 'ryry', 'ryry@gmail.com', '3f1c4215f8cb', 'utilisateur'),
+(11, 'Gestion', 'gestion', 'gestion@gestion.com', '3f1c4215f8cb', 'admin_web'),
+(12, 'tech1', 'tech1', 'tech1@gmail.com', '3f1c4215f8cb', 'technicien'),
+(13, 'rayan', 'rayan', 'rayan@gmail.com', '3f1c4215f8cb', 'utilisateur'),
+(14, 'tech2', 'tech2', 'tech2@gmail.com', '3f1c4215f8cb', 'technicien'),
+(16, 'admin système', 'admin', 'admin_sys@gmail.com', '2a095308', 'admin_systeme'),
+(17, 'Polo', 'tech3', 'tech3@gmail.com', '3f1c4215f8cb', 'technicien');
 
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `libelle_ticket`
+--
+ALTER TABLE `libelle_ticket`
+  ADD PRIMARY KEY (`id_libelle`),
+  ADD UNIQUE KEY `libelle` (`libelle`);
 
 --
 -- Index pour la table `log`
@@ -99,6 +165,12 @@ ALTER TABLE `tickets`
   ADD PRIMARY KEY (`id_ticket`);
 
 --
+-- Index pour la table `tickets_close`
+--
+ALTER TABLE `tickets_close`
+  ADD PRIMARY KEY (`id_ticket`);
+
+--
 -- Index pour la table `user`
 --
 ALTER TABLE `user`
@@ -110,6 +182,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT pour la table `libelle_ticket`
+--
+ALTER TABLE `libelle_ticket`
+  MODIFY `id_libelle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT pour la table `log`
 --
 ALTER TABLE `log`
@@ -119,13 +197,13 @@ ALTER TABLE `log`
 -- AUTO_INCREMENT pour la table `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id_ticket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_ticket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
