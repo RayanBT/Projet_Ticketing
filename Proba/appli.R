@@ -87,7 +87,7 @@ server <- function(input, output) {
       moyenne = length(liste_mois)/nombre_mois
       #affichage de la moyenne
       output$valeur_affiche <- renderText({
-        paste("Moyenne  : ", round(moyenne, 2))
+        paste("Nombre moyen de ticket créé par mois  : ", round(moyenne, 2))
       })
 
       gg <- ggplot(filtered_tickets, aes_string(x = "mois")) +
@@ -112,7 +112,7 @@ server <- function(input, output) {
 
       #affichage de la moyenne
       output$valeur_affiche <- renderText({
-        paste("Moyenne affichée : ", round(moyenne, 2))
+        paste("Nombre moyen de ticket créé par année : ", round(moyenne, 2))
       })
 
       gg <- ggplot(filtered_tickets, aes_string(x = "year(as.Date(date_creation))")) +
