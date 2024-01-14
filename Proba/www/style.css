@@ -1,0 +1,21 @@
+body{
+    background-color: #BDCDD6;
+}
+#titre{
+    margin: 10px;
+    text-align: center;
+    background-color: #6096B4;
+    border: 2px black solid;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+/* Style pour le sidebarPanel */
+#sidebar {
+    background-color: #6096B4; /* Couleur rouge (tu peux la changer en une couleur de ton choix) */
+    padding: 10px;
+    border: 2px black solid;
+    border-radius: 4px;
+    margin: 10px;
+    font-size: 17px;
+}
