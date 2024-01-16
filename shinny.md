@@ -1,6 +1,6 @@
 <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100vh; padding: 20px;">
 
-# <div align="center"><u> Conception </u></div>
+# <div align="center"><u> Analyse statistique </u></div>
 
 ![Logo de l'IUT](img/LogoIUT.jpeg)
 
