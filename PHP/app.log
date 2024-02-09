@@ -502,3 +502,39 @@
 [12-01-2024 16:51:53] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : Isma
 [12-01-2024 16:51:59] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : Isma
 [12-01-2024 16:52:04] [info] [IP: 127.0.0.1]: Redirection vers la page utilisateur.php pour l'user avec le login : Isma
+[09-02-2024 15:44:10] [info] [IP: ::1]: Redirection vers la page accueil.php car il ne dispose pas de role pour l'user avec le login : isma
+[09-02-2024 15:52:00] [info] [IP: ::1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : isma@gmail.com
+[09-02-2024 15:52:14] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : isma
+[09-02-2024 15:52:14] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : isma
+[09-02-2024 15:57:34] [error] [IP: ::1]: Le login n'existe pas dans la base de données.
+[09-02-2024 15:57:46] [error] [IP: ::1]: Le login n'existe pas dans la base de données.
+[09-02-2024 15:59:48] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : admin
+[09-02-2024 16:01:57] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : tech1
+[09-02-2024 16:02:05] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : tech1
+[09-02-2024 16:02:16] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : tech1
+[09-02-2024 16:02:32] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : admin
+[09-02-2024 16:02:51] [error] [IP: ::1]: Tentative de connexion. Captcha incorrect. Veuillez réessayer.
+[09-02-2024 16:03:50] [info] [IP: ::1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : rc@mail
+[09-02-2024 16:04:36] [info] [IP: ::1]: Inscription réussie pour l'utilisateur avec l'adresse e-mail : ?@com
+[09-02-2024 16:09:17] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : tech1
+[09-02-2024 16:09:17] [info] [IP: ::1]: Redirection vers la page_technicien pour l'user avec le login : tech1
+[09-02-2024 16:27:32] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[09-02-2024 16:27:32] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[09-02-2024 16:29:35] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[09-02-2024 16:29:43] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion
+[09-02-2024 16:33:48] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : rayan
+[09-02-2024 16:34:03] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : rayan
+[09-02-2024 16:34:03] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : rayan
+[09-02-2024 16:35:43] [info] [IP: ::1]: Redirection vers la page utilisateur.php pour l'user avec le login : rayan
+[09-02-2024 16:37:05] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : admin
+[09-02-2024 16:37:16] [error] [IP: ::1]: Tentative de connexion échouée pour l'utilisateur avec le login : admin
+[09-02-2024 16:37:47] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : admin
+[09-02-2024 16:37:47] [info] [IP: ::1]: Redirection vers la page_admin_systeme pour l'user avec le login : admin
+[09-02-2024 16:41:03] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : tech1
+[09-02-2024 16:41:03] [info] [IP: ::1]: Redirection vers la page_technicien pour l'user avec le login : tech1
+[09-02-2024 16:57:45] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : admin
+[09-02-2024 16:57:45] [info] [IP: ::1]: Redirection vers la page_admin_systeme pour l'user avec le login : admin
+[09-02-2024 16:57:50] [info] [IP: ::1]: Redirection vers la page_admin_systeme pour l'user avec le login : admin
+[09-02-2024 16:57:52] [info] [IP: ::1]: Redirection vers la page_admin_systeme pour l'user avec le login : admin
+[09-02-2024 16:58:20] [info] [IP: ::1]: Connexion réussie pour l'utilisateur avec le login : gestion
+[09-02-2024 16:58:20] [info] [IP: ::1]: Redirection vers la page_adm_web pour l'user avec le login : gestion

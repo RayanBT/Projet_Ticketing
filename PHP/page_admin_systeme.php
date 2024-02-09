@@ -66,7 +66,7 @@ if ($type == 'ouverts') {
 
 
             // Utilisation d'une requête préparée pour éviter les injections SQL
-            $query = "SELECT t.id_ticket as Id, t.Login as login, lt.libelle as Libelle, t.priorite as Priorité, DATE_FORMAT(t.date_creation, '%d/%m/%Y') as 'date_creation', t.statut as Statut 
+            $query = "SELECT t.id_ticket as Id, t.Login as Crée_par, lt.libelle as Libelle, t.priorite as Priorité, DATE_FORMAT(t.date_creation, '%d/%m/%Y') as 'date_creation', t.statut as Statut 
                     FROM $table t
                     LEFT JOIN libelle_ticket lt ON t.id_libelle = lt.id_libelle
                     WHERE t.statut!=?";
