@@ -70,7 +70,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
 
-                echo "<table style='width: 100%; height: 400px; text-align: center'>";
+                echo "<table style='width: 100%; text-align: center'>";
 
 // Affiche les en-têtes de colonnes
                 echo "<tr>";

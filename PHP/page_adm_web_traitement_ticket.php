@@ -76,7 +76,7 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
 
             if ($result) {
                 echo "<form method='post' action='action_update_ticket_adm_web.php'>";
-                echo "<table style='width: 100%; height: 400px; text-align: center'>";
+                echo "<table style='width: 100%; text-align: center'>";
                 echo "<tr>";
 
                 // Affiche les en-têtes de colonnes

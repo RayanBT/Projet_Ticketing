@@ -79,7 +79,7 @@ if ($type == 'ouverts') {
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
 
-                echo "<table style='width: 100%; height: 400px; text-align: center'>";
+                echo "<table style='width: 100%; text-align: center'>";
                 echo "<tr>";
 
                 if ($result && mysqli_num_rows($result) > 0) {

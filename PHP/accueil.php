@@ -77,7 +77,7 @@ $result = mysqli_query($connection, $query);
             <br>
 
             <?php
-            echo "<table style='width: 100%; height: 400px; text-align: center'>";
+            echo "<table style='width: 100%; text-align: center'>";
             // Affiche les en-têtes de colonnes
             echo "<tr>";
 
