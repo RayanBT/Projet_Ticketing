@@ -1,4 +1,4 @@
-    <?php
+<?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -33,6 +33,9 @@ $result = mysqli_query($connection, $query);
     <nav>
         <ul>
             <li class="logo"><img alt="logo de Rayan Ticket" src="../IMG/Proposition_logo_1.png"></li>
+            <li>
+                <i><h3 class="role">Role : Visiteur</h3></i>
+            </li>
             <li>
                 <a href="#"><i class="fa fa-home"></i> &nbsp; Accueil</a>
             </li>

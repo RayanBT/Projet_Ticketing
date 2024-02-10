@@ -30,6 +30,9 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
         <ul>
             <li class="logo"><img alt="logo de Rayan Ticket" src="../IMG/Proposition_logo_1.png"></li>
             <li>
+                <i><h3 class="role">Role: <?php echo $_SESSION['user_role']; ?></h3></i>
+            </li>
+            <li>
                 <a href="authentification.php"><i class="fa fa-home"></i> &nbsp; Accueil</a>
             </li>
             <li>
@@ -54,9 +57,6 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
     </nav>
     <div class="corps">
         <main>
-            <h3 class="phrase_acceuil">Bonjour, <?php echo $_SESSION['login']; ?> ravi de vous revoir.</h3>
-            <br>
-            <br>
             <h3 id="tickets-ouverts">Tickets ouverts :</h3>
             <br>
             <?php

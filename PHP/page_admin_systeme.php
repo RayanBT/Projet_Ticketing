@@ -37,6 +37,9 @@ if ($type == 'ouverts') {
         <ul>
             <li class="logo"><img alt="logo de Rayan Ticket" src="../IMG/Proposition_logo_1.png"></li>
             <li>
+                <i><h3 class="role">Role: <?php echo $_SESSION['user_role']; ?></h3></i>
+            </li>
+            <li>
                 <a href="authentification.php"><i class="fa fa-home"></i> &nbsp; Accueil</a>
             </li>
             <li>
@@ -55,16 +58,9 @@ if ($type == 'ouverts') {
     </nav>
     <div class="corps">
         <main>
-            <h3 class="phrase_acceuil">Bienvenue sur la page de l'administrateur système.</h3>
-            <br>
-            <br>
             <h3 id="tickets-ouverts">Tickets <?php echo $type; ?>:</h3>
             <br>
             <?php
-
-
-
-
             // Utilisation d'une requête préparée pour éviter les injections SQL
             $query = "SELECT t.id_ticket as Id, t.Login as Crée_par, lt.libelle as Libelle, t.priorite as Priorité, DATE_FORMAT(t.date_creation, '%d/%m/%Y') as 'date_creation', t.statut as Statut 
                     FROM $table t

@@ -12,6 +12,8 @@ $password = "";
 $database = "BD_Ticketing";
 $table = "tickets";
 
+$role = $_SESSION['user_role'];
+
 $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur de connexion à la base de données");
 
 ?>
@@ -32,7 +34,10 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
         <ul>
             <li class="logo"><img alt="logo de Rayan Ticket" src="../IMG/Proposition_logo_1.png"></li>
             <li>
-                <a href="authentification.php"><i class="fa fa-home"></i> &nbsp; Accueil</a>
+                <i><h3 class="role">Role : <?php echo "$role";?>  </h3></i>
+            </li>
+            <li>
+                <a href="accueil.php"><i class="fa fa-home"></i> &nbsp; Accueil</a>
             </li>
             <li>
                 <a href="form_creation_ticket.php"><i class="fa fa-plus-circle"></i> &nbsp; Créer un ticket</a>
@@ -50,9 +55,6 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
     </nav>
     <div class="corps">
         <main>
-            <h3 class="phrase_acceuil">Bonjour, <?php echo $_SESSION['login']; ?> ravi de vous revoir.</h3>
-            <br>
-            <br>
             <h3 id="hisorique-ticket">Historique de ticket :</h3>
             <br>
             <?php

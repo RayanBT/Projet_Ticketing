@@ -31,6 +31,9 @@ $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur 
         <ul>
             <li class="logo"><img alt="logo de Rayan Ticket" src="../IMG/Proposition_logo_1.png"></li>
             <li>
+                <i><h3 class="role">Role: <?php echo $_SESSION['user_role']; ?></h3></i>
+            </li>
+            <li>
                 <a href="authentification.php"><i class="fa fa-home"></i> &nbsp; Accueil</a>
             </li>
             <li>
