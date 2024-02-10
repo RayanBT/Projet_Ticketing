@@ -46,13 +46,10 @@ $result = mysqli_query($connection, $query);
                 <a href="#tickets_recents"><i class="fa fa-ticket"></i> &nbsp; Tickets récents</a>
             </li>
             <li>
-                <a href="#about"><i class="fa fa-book"></i> &nbsp; à propos</a>
+                <a href="#about-contact"><i class="fa fa-book"></i> &nbsp; À propos / Contact</a>
             </li>
             <li>
-                <a href="#about"><i class="fa fa-phone"></i> &nbsp; Nous contacter</a>
-            </li>
-            <li>
-                <a href="../PHP/form_connexion_inscription.php" class="bouton"><i class="fa fa-user"></i> Connexion / Inscription</a>
+                <a href="../PHP/form_connexion_inscription.php" ><i class="fa fa-user"></i> Connexion / Inscription</a>
             </li>
         </ul>
     </nav>
@@ -141,27 +138,27 @@ $result = mysqli_query($connection, $query);
         ?>
 
 
-
-        <footer id="about">
-            <div class="card">
-                <h4>A propos</h4>
+        <footer id="about-contact">
+            <div class="column">
+                <h4>À propos de Rayan's Corp</h4>
                 <p>
-                    Rayan's Corp est un groupe d'étudiants en informatique en BUT2 à l'IUT de Vélizy
-                    composé de BEN TANFOUS Rayan, CLOUZEAU Armand, BADER Sarah, PESENTI Aymeric et AKBOULATOV Ismail
+                    Rayan's Corp est un groupe d'étudiants en informatique en BUT2 à l'IUT de Vélizy,
+                    composé de BEN TANFOUS Rayan, CLOUZEAU Armand, BADER Sarah, PESENTI Aymeric et AKBOULATOV Ismail.
+                    Nous sommes passionnés par les technologies émergentes et travaillons ensemble pour créer des solutions innovantes.
                 </p>
             </div>
-            <div class="card">
-                <h4>Pour nous contacter</h4>
+            <div class="column">
+                <h4>Nous contacter</h4>
                 <ul>
-                    <li>btrayan21@gmail.com</li>
-                    <li>ismail.akboulatov@gmail.com</li>
-                    <li>armand.clouzeau@gmail.com</li>
-                    <li>sarah.bader.f@gmail.com</li>
-                    <li>aymeric.pesenti@gmail.com</li>
+                    <li><a href="mailto:btrayan21@gmail.com">btrayan21@gmail.com</a></li>
+                    <li><a href="mailto:ismail.akboulatov@gmail.com">ismail.akboulatov@gmail.com</a></li>
+                    <li><a href="mailto:armand.clouzeau@gmail.com">armand.clouzeau@gmail.com</a></li>
+                    <li><a href="mailto:sarah.bader.f@gmail.com">sarah.bader.f@gmail.com</a></li>
+                    <li><a href="mailto:aymeric.pesenti@gmail.com">aymeric.pesenti@gmail.com</a></li>
                 </ul>
             </div>
-
         </footer>
+
     </div>
 </div>
 </body>

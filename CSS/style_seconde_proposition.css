@@ -6,7 +6,6 @@ body {
 }
 .page{
     display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
 }
 /* Styles pour les écrans de largeur normale (par exemple, les ordinateurs de bureau) */
@@ -60,10 +59,6 @@ nav ul li:hover a:before {
     width: 95%;
 }
 
-nav ul li:last-child {
-    margin-top: auto;
-}
-
 .logo {
     width: 150px;
     height: 150px;
@@ -102,25 +97,19 @@ th, td{
     padding: 10px;
 }
 
-footer{
+footer {
     display: flex;
-    flex-flow: row wrap;
-    flex: 1 0 auto;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.card {
-    width: 30%;
-    background-color: #e3e9f7;
-    border-radius: 10px;
+.column {
+    width: 48%;
     box-sizing: border-box;
-    min-width: 100px;
-    margin: 2% 1% 2% 0;
-    flex-grow: 1;
-    padding: 7px;
-    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s;
+    margin-bottom: 10px;
 }
 
-.card:hover {
-    transform: scale(1.01);
+.column a{
+    text-decoration: none;
+    color: inherit; /* Utilisez la couleur héritée du parent */
 }
