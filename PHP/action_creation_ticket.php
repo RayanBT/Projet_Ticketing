@@ -13,6 +13,8 @@ $password = "";
 if (!empty($_POST['libelle']) && !empty($_POST['description']) && !empty($_POST['priorite'])) {
     $login = $_SESSION['login'];
     $description = $_POST['description'];
+    $salle = $_POST['salle'];
+    $ip = $_POST['ip'];
     $priorite = $_POST['priorite'];
     $libelle_id = $_POST['libelle'];
 
@@ -21,11 +23,11 @@ if (!empty($_POST['libelle']) && !empty($_POST['description']) && !empty($_POST[
     $tab = "tickets";
 
     // Préparation de la requête SQL avec des paramètres
-    $query = "INSERT INTO $tab (login, id_libelle, description, priorite, date_creation) VALUES (?, ?, ?, ?, NOW())";
+    $query = "INSERT INTO $tab (login, id_libelle, description, salle, ip, priorite, date_creation) VALUES (?, ?, ?, ?, ?, ?, NOW())";
     $stmt = mysqli_prepare($connection, $query);
 
     // Liaison des valeurs aux paramètres dans la requête préparée
-    mysqli_stmt_bind_param($stmt, "ssss", $login, $libelle_id, $description, $priorite);
+    mysqli_stmt_bind_param($stmt, "ssssss", $login, $libelle_id, $description, $salle, $ip, $priorite);
 
     // Exécution de la requête préparée
     $success = mysqli_stmt_execute($stmt);

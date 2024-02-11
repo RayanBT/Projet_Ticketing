@@ -38,7 +38,20 @@ if (!isset($_SESSION['login'])) {
         </select><br><br>
 
         <label for="description">Description :</label><br>
+
         <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="salle">Salle :</label>
+        <select id="salle" name="salle">
+            <option value="G22">G22</option>
+            <option value="G23">G23</option>
+            <option value="G24">G24</option>
+            <option value="G25">G25</option>
+            <option value="G26">G26</option>
+        </select><br><br>
+
+        <label for="ip">@ip du poste :</label><br>
+        <input type="text" id="ip" name="ip" required maxlength="15"><br><br>
 
         <label for="priorite">Priorité :</label>
         <select id="priorite" name="priorite">
