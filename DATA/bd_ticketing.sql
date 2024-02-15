@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le : ven. 12 jan. 2024 à 16:18
+-- Hôte : 127.0.0.1
+-- Généré le : jeu. 15 fév. 2024 à 14:22
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `BD_Ticketing`
+-- Base de données : `bd_ticketing`
 --
 
 -- --------------------------------------------------------
@@ -70,6 +70,8 @@ CREATE TABLE `tickets` (
   `login` varchar(32) NOT NULL,
   `id_libelle` int(11) NOT NULL,
   `description` text NOT NULL,
+  `salle` varchar(3) NOT NULL,
+  `ip` varchar(15) NOT NULL,
   `priorite` enum('Faible','Moyen','Important','Urgent') NOT NULL,
   `date_creation` date NOT NULL,
   `statut` enum('Ouvert','En cours','Fermé') NOT NULL DEFAULT 'Ouvert',
@@ -80,8 +82,8 @@ CREATE TABLE `tickets` (
 -- Déchargement des données de la table `tickets`
 --
 
-INSERT INTO `tickets` (`id_ticket`, `login`, `id_libelle`, `description`, `priorite`, `date_creation`, `statut`, `technicien`) VALUES
-(40, 'rayan', 9, 'sfgsgffg', 'Important', '2024-01-12', 'Ouvert', 'Personne');
+INSERT INTO `tickets` (`id_ticket`, `login`, `id_libelle`, `description`, `salle`, `ip`, `priorite`, `date_creation`, `statut`, `technicien`) VALUES
+(45, 'armand', 9, '(\"y\"\'r', 'G22', '192.168.1.60', 'Faible', '2024-02-11', 'En cours', 'armand');
 
 -- --------------------------------------------------------
 
@@ -139,7 +141,9 @@ INSERT INTO `user` (`id_user`, `nom`, `login`, `email`, `mdp`, `user_role`) VALU
 (13, 'rayan', 'rayan', 'rayan@gmail.com', '3f1c4215f8cb', 'utilisateur'),
 (14, 'tech2', 'tech2', 'tech2@gmail.com', '3f1c4215f8cb', 'technicien'),
 (16, 'admin système', 'admin', 'admin_sys@gmail.com', '2a095308', 'admin_systeme'),
-(17, 'Polo', 'tech3', 'tech3@gmail.com', '3f1c4215f8cb', 'technicien');
+(17, 'Polo', 'tech3', 'tech3@gmail.com', '3f1c4215f8cb', 'technicien'),
+(18, 'Armand', 'armand', 'armand@gmail.fr', '3f1c4215f8cb', 'utilisateur'),
+(19, 'test', 'test2', 'test@outlook.com', '2a035413', 'utilisateur');
 
 --
 -- Index pour les tables déchargées
@@ -197,13 +201,13 @@ ALTER TABLE `log`
 -- AUTO_INCREMENT pour la table `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id_ticket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id_ticket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
