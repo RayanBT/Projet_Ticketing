@@ -1,8 +1,35 @@
 <?php
 session_start();
+require_once('fonction_check_connexion.php');
 // Inclure le fichier de configuration des logs
 require_once('Config.php');
+require('fonction_cloturer_ticket.php');
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $check = checkLoggedIn();
+    if ($check == true) {
+        if (isset($_POST['Id'])) {
+            $ticket_id = $_POST['Id'];
+            closeTicket($ticket_id);
+        } else {
+            logMessage("ID du ticket non spécifié.", 'error');
+            $_SESSION['message'] = "ID du ticket non spécifié.";
+            $_SESSION['couleur'] = false;
+        }
+    }
+} else {
+    logMessage("Requête non autorisée.", 'error');
+    $_SESSION['message'] = "Requête non autorisée.";
+    $_SESSION['couleur'] = false;
+}
+
+header('Location: ../PHP/page_technicien.php');
+exit();
+?>
+
+
+
+/**
 if (!isset($_SESSION['login'])) {
     header("Location: ../PHP/Deconnexion.php");
     exit();
@@ -95,3 +122,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 header('Location: ../PHP/page_details_ticket.php');
 exit();
 ?>
+*/

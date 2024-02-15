@@ -6,6 +6,11 @@ $logConfig = [
     'logLevel' => 'info',
 ];
 
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "BD_Ticketing";
+
 // Vérifiez si le fichier de log existe, sinon, créez-le
 if (!file_exists($logConfig['logFile'])) {
     $file = fopen($logConfig['logFile'], 'w');
