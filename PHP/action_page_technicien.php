@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once('fonction_connexion_bd.php');
+
 if (!isset($_SESSION['login'])) {
     header("Location: ../PHP/Deconnexion.php");
     exit();
@@ -13,14 +15,17 @@ if (isset($_POST['valider_tickets']) && isset($_POST['tickets'])) {
     $database = "BD_Ticketing";
     $table = "tickets";
 
-    $connection = mysqli_connect($host, $user, $password, $database) or die("Erreur de connexion à la base de données");
+    $connection = connectToDatabase($host, $user, $password, $database);
 
     $login_technicien = $_SESSION['login'];
     $tickets_selected = $_POST['tickets'];
 
-    // Mettez à jour les tickets avec le login du technicien
+    // Mettre à jour les tickets avec le login du technicien
     $update_query = "UPDATE $table SET Technicien = ?, Statut = 'En cours' WHERE id_ticket IN (" . implode(',', $tickets_selected) . ")";
     $stmt_update = mysqli_prepare($connection, $update_query);
+
+
+
 
     if ($stmt_update) {
         mysqli_stmt_bind_param($stmt_update, 's', $login_technicien);
