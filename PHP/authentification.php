@@ -2,13 +2,14 @@
 session_start();
 // Inclure le fichier de configuration des logs
 require_once('Config.php');
+require 'fonction_get_session.php';
 if (!isset($_SESSION['login'])) {
     header("Location: ../PHP/Deconnexion.php");
     exit();
 }
-$login = $_SESSION['login'];
-$user_role = $_SESSION['user_role'];
-$message = $_SESSION['message'];
+$login = getLogin();
+$user_role = getRole();
+$message = getMessage();
 if (isset($user_role)) {
     if ($user_role == "utilisateur") {
         logMessage("Redirection vers la page utilisateur.php pour l'user avec le login : $login");
