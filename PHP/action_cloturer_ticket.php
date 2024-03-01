@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once('fonction_check_connexion.php');
 // Inclure le fichier de configuration des logs
 require_once('Config.php');
+require_once('fonction_check_connexion.php');
 require('fonction_cloturer_ticket.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
