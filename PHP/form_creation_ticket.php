@@ -5,6 +5,15 @@ if (!isset($_SESSION['login'])) {
     header("Location: ../PHP/Deconnexion.php");
     exit();
 }
+// Générer deux chiffres aléatoires entre 1 et 10
+$nombre1 = rand(1, 10);
+$nombre2 = rand(1, 10);
+
+// Calculer la somme
+$somme = $nombre1 + $nombre2;
+
+// Stocker la somme dans la session
+$_SESSION['captcha'] = $somme;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,6 +69,8 @@ if (!isset($_SESSION['login'])) {
             <option value="Important">Important</option>
             <option value="Urgent">Urgent</option>
         </select><br><br>
+        <label for="captcha"> Vérification (calculez <?php echo $nombre1; ?> + <?php echo $nombre2; ?>) :</label>
+        <input type="text" id="captcha" placeholder="Résultat" name="captcha">
 
         <input type="submit" value="Créer le ticket">
     </form>
