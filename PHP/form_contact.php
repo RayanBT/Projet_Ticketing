@@ -27,8 +27,8 @@ $_SESSION['captcha'] = $somme;
     <h1>Contactez-nous</h1>
 
     <form action="" method="post">
-        <label for="email">Email :</label>
-        <select id="email" name="email">
+        <label for="service_contact">Service à contacter :</label>
+        <select id="service_contact" name="service_contact">
             <option value="btrayan21@gmail.com">Directeur du Service Technique</option>
             <option value="ismail.akboulatov@gmail.com">Administrateur de la Plateforme</option>
             <option value="armand.clouzeau@gmail.com">Analyste des Tickets</option>
