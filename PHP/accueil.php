@@ -153,11 +153,11 @@ $result = mysqli_query($connection, $query);
             <div class="column">
                 <h4>Nous contacter</h4>
                 <ul>
-                    <li><a href="mailto:btrayan21@gmail.com">btrayan21@gmail.com</a></li>
-                    <li><a href="mailto:ismail.akboulatov@gmail.com">ismail.akboulatov@gmail.com</a></li>
-                    <li><a href="mailto:armand.clouzeau@gmail.com">armand.clouzeau@gmail.com</a></li>
-                    <li><a href="mailto:sarah.bader.f@gmail.com">sarah.bader.f@gmail.com</a></li>
-                    <li><a href="mailto:aymeric.pesenti@gmail.com">aymeric.pesenti@gmail.com</a></li>
+                    <li><a href="form_contact.php">btrayan21@gmail.com</a></li>
+                    <li><a href="form_contact.php">ismail.akboulatov@gmail.com</a></li>
+                    <li><a href="form_contact.php">armand.clouzeau@gmail.com</a></li>
+                    <li><a href="form_contact.php">sarah.bader.f@gmail.com</a></li>
+                    <li><a href="form_contact.php">aymeric.pesenti@gmail.com</a></li>
                 </ul>
             </div>
         </footer>
