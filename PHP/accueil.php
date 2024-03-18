@@ -54,9 +54,7 @@ $result = mysqli_query($connection, $query);
             <li>
                 <a href="form_contact.php"><i class="fa fa-phone"></i> &nbsp; Contact</a>
             </li>
-            <li>
-                <a href="../PHP/form_connexion_inscription.php" ><i class="fa fa-user"></i> Connexion / Inscription</a>
-            </li>
+            <a class="connexion-inscription" href="../PHP/form_connexion_inscription.php"><i class="fa fa-user"></i> Connexion / Inscription</a>
         </ul>
     </nav>
     <div class="corps">

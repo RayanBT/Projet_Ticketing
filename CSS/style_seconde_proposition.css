@@ -117,3 +117,28 @@ footer {
     box-sizing: border-box;
     margin-bottom: 10px;
 }
+
+.connexion-inscription {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    color: #e3e9f7;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to bottom,#29648A,#2E9CCA);
+    box-shadow: 0 5px 15px #307191;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.connexion-inscription i {
+    margin-right: 5px;
+}
+
+.connexion-inscription:hover {
+    transform: scale(1.05);
+}
+
+
