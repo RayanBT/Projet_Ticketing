@@ -106,9 +106,7 @@ $userData = mysqli_fetch_assoc($result);
             <li>
                 <a href="ChangePassword.php" class="bouton"><i class="fa fa-user"></i> &nbsp; Changer le mot de passe</a>
             </li>
-            <li>
-                <a href="../PHP/Deconnexion.php" class="bouton"><i class="fa fa-sign-out"></i> Déconnexion</a>
-            </li>
+            <a class="deconnexion" href="../PHP/Deconnexion.php" class="bouton"><i class="fa fa-sign-out"></i> Déconnexion</a>
         </ul>
     </nav>
     <div class="corps">

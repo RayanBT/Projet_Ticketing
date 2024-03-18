@@ -178,4 +178,27 @@ th, td{
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* ombre légère */
 }
 
+.deconnexion {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    color: #ffffff; /* Couleur du texte */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    background-color: #8B0000; /* Rouge foncé pour la couleur de fond */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ombre */
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.deconnexion i {
+    margin-right: 5px;
+}
+
+.deconnexion:hover {
+    transform: scale(1.05);
+}
+
 

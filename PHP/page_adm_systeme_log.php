@@ -38,9 +38,8 @@ if (!isset($_SESSION['login']) and $_SESSION['user_role'] != "admin_systeme") {
             <li>
                 <a href="profil.php"><i class="fa fa-user"></i> &nbsp; Profil</a>
             </li>
-            <li>
-                <a href="../PHP/Deconnexion.php" class="bouton"><i class="fa fa-sign-out"></i> Déconnexion</a>
-            </li>
+
+            <a class ="deconnexion" href="../PHP/Deconnexion.php" class="bouton"><i class="fa fa-sign-out"></i> Déconnexion</a>
         </ul>
     </nav>
     <div class="corps">
