@@ -37,7 +37,7 @@ $result = mysqli_query($connection, $query);
                 <i><h3 class="role">Role : Visiteur</h3></i>
             </li>
             <li>
-                <a href="#"><i class="fa fa-home"></i> &nbsp; Accueil</a>
+                <a href="accueil.php"><i class="fa fa-home"></i> &nbsp; Accueil</a>
             </li>
             <li>
                 <a href="#presentation"><i class="fa fa-question"></i> &nbsp; Qu'est ce que le ticketing ?</a>
@@ -49,7 +49,10 @@ $result = mysqli_query($connection, $query);
                 <a href="#tickets_recents"><i class="fa fa-ticket"></i> &nbsp; Tickets récents</a>
             </li>
             <li>
-                <a href="#about-contact"><i class="fa fa-book"></i> &nbsp; À propos / Contact</a>
+                <a href="#about"><i class="fa fa-book"></i> &nbsp; À propos</a>
+            </li>
+            <li>
+                <a href="form_contact.php"><i class="fa fa-phone"></i> &nbsp; Contact</a>
             </li>
             <li>
                 <a href="../PHP/form_connexion_inscription.php" ><i class="fa fa-user"></i> Connexion / Inscription</a>
@@ -141,7 +144,7 @@ $result = mysqli_query($connection, $query);
         ?>
 
 
-        <footer id="about-contact">
+        <footer id="about">
             <div class="column">
                 <h4>À propos de Rayan's Corp</h4>
                 <p>
@@ -149,16 +152,6 @@ $result = mysqli_query($connection, $query);
                     composé de BEN TANFOUS Rayan, CLOUZEAU Armand, BADER Sarah, PESENTI Aymeric et AKBOULATOV Ismail.
                     Nous sommes passionnés par les technologies émergentes et travaillons ensemble pour créer des solutions innovantes.
                 </p>
-            </div>
-            <div class="column">
-                <h4>Nous contacter</h4>
-                <ul>
-                    <li><a href="form_contact.php">btrayan21@gmail.com</a></li>
-                    <li><a href="form_contact.php">ismail.akboulatov@gmail.com</a></li>
-                    <li><a href="form_contact.php">armand.clouzeau@gmail.com</a></li>
-                    <li><a href="form_contact.php">sarah.bader.f@gmail.com</a></li>
-                    <li><a href="form_contact.php">aymeric.pesenti@gmail.com</a></li>
-                </ul>
             </div>
         </footer>
 

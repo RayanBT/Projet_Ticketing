@@ -114,12 +114,6 @@ footer {
 }
 
 .column {
-    width: 48%;
     box-sizing: border-box;
     margin-bottom: 10px;
-}
-
-.column a{
-    text-decoration: none;
-    color: inherit; /* Utilisez la couleur héritée du parent */
 }
